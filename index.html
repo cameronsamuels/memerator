@@ -105,7 +105,7 @@ var canvas = document.querySelector('canvas');
 	 if ("createEvent" in document) {
 	    var evt = document.createEvent("HTMLEvents");
 	    evt.initEvent("change", false, true);
-	    document.querySelector('[type=file]')..dispatchEvent(evt);
+	    document.querySelector('[type=file]').dispatchEvent(evt);
 	}
 	else
 	   document.querySelector('[type=file]').fireEvent("onchange");
