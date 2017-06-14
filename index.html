@@ -137,11 +137,16 @@
 						// 						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
 						img = new Image();
 						img.onload = function() {
-							oc.width = img.width;
-							oc.height = img.height;
-							octx.drawImage(img, 0, 0, oc.width, oc.height);
-							octx.drawImage(oc, 0, 0, oc.width, oc.height);
-							ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, canvas.width, canvas.height);
+// 							oc.width = img.width;
+// 							oc.height = img.height;
+// 							octx.drawImage(img, 0, 0, oc.width, oc.height);
+// 							octx.drawImage(oc, 0, 0, oc.width, oc.height);
+// 							var max = Math.max(img.width, img.height);
+// 							var min = Math.min(img.width, img.height);
+// 							var height = (canvas.height/canvas.width) (max/min);
+							canvas.width = img.width;
+							canvas.height = img.height;
+							ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 						}
 						img.src = e.target.result;
 					};
