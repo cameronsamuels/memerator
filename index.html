@@ -53,9 +53,6 @@
 		<center>
 			<form>
 				<div id="upload">Upload image<input type="file" /></div>
-			</form>
-			<br>
-			<form>
 				<label>Top text:</label>
 				<input type="text" />
 				<p></p>
@@ -96,5 +93,9 @@
     {
       //$('#img').attr('src', '/assets/no_preview.png');
     }
+	var ctx = canvas.getContext("2d");
+	ctx.font = "30px Arial";
+	ctx.fillText(document.querySelectorAll('input')[1].value,10,50);
+	ctx.fillText(document.querySelectorAll('input')[2].value,10,50);
 }, false);
 		</script>
