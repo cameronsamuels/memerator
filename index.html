@@ -95,6 +95,7 @@
     }
 			}, false);
  function text(event) {
+	var canvas = document.querySelector('canvas');
 	var ctx = canvas.getContext("2d");
 	ctx.font = "30px Arial";
 	ctx.fillText(document.querySelectorAll('input')[1].value,10,5);
