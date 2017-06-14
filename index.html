@@ -108,7 +108,7 @@ var canvas = document.querySelector('canvas');
 	    document.querySelector('[type=file]')..dispatchEvent(evt);
 	}
 	else
-	   document.querySelector('[type=file]')..fireEvent("onchange");
+	   document.querySelector('[type=file]').fireEvent("onchange");
 	ctx.font = "100px Arial";
 	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
 	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
