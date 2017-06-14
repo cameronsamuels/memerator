@@ -6,7 +6,7 @@
 		<meta name="viewport" content="user-scalable=yes,initial-scale=1,width=deice-width">
 		<style>
 			html, body {
-				font-family: impact;	
+				font-family: sans-serif;	
 			}
 			form div {
 				overflow: hidden;
@@ -61,6 +61,9 @@
 			<label>Bottom text:</label>
 			<input type="text" />
 		</form>
+		<footer>
+  			<small>&copy; Copyright 2017, Cameron Samuels and Toby Latino</small>
+		</footer>
 		</center>
 		<script>
 			var $ = function(i){return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
@@ -69,25 +72,13 @@
 				var canvas = $('canvas'), url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
 				if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 					var reader = new FileReader();
-					reader.onloadend = function() {
-						var canvas = $("canvas"), ctx = canvas.getContext("2d"), oc = document.createElement('canvas'), octx = oc.getContext('2d');
-						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
-						switch(exif.Orientation){
-						   case 8:
-						   ctx.rotate(90*Math.PI/180);
-						   octx.rotate(90*Math.PI/180);
-						   break;
-						   case 3:
-						   ctx.rotate(180*Math.PI/180);
-						   octx.rotate(180*Math.PI/180);
-						   break;
-						   case 6:
-						   ctx.rotate(-90*Math.PI/180);
-						   octx.rotate(-90*Math.PI/180);	
-						   break;
-						}
+					reader.onload = function(e) {
+						//           document.querySelector('img').setAttribute('src', e.target.result);
+						var canvas = $("canvas"), ctx = canvas.getContext("2d");
 						img = new Image();
 						img.onload = function() {
+							var oc = document.createElement('canvas'),
+							octx = oc.getContext('2d');
 							oc.width = img.width;
 							oc.height = img.height;
 							octx.drawImage(img, 0, 0, oc.width, oc.height);
@@ -95,10 +86,10 @@
 							ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, canvas.width, canvas.height);
 						}
 						img.src = e.target.result;
-					};
+					}
 					reader.readAsDataURL($('[type=file]').files[0]);
 				} else {
-					//not img
+					//$('#img').attr('src', '/assets/no_preview.png');
 				}
 			}, false);
 
@@ -111,17 +102,11 @@
 					$('[type=file]').dispatchEvent(evt);
 				} else $('[type=file]').fireEvent("onchange");
 				setTimeout(function() {
-					ctx.font = "100px impact";
-					ctx.textAlign="center";
-					ctx.lineWidth = 5;
-					ctx.fillStyle = "#fff";
-					ctx.strokeStyle = '#000';
-					ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width/2, 100);
-					ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width/2, 974);
-					ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width/2, 100);
-					ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width/2, 974);
+					ctx.font = "100px Arial";
+					ctx.fillText(document.querySelectorAll('input')[1].value, 10, 200);
+					ctx.fillText(document.querySelectorAll('input')[2].value, 10, 850);
 				}, 1000);
 			}
 			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 			document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
-</script></body></html>
+</script>
