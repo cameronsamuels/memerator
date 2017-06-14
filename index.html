@@ -61,10 +61,11 @@
 			</form>
 		</center>
 		<script>
-			document.querySelector('[type=file]').addEventListener("change", function(event) {
-		var canvas = document.querySelector('canvas');
+			var canvas = document.querySelector('canvas');
 		canvas.width = 1024;
 		canvas.height = 1024;
+			document.querySelector('[type=file]').addEventListener("change", function(event) {
+var canvas = document.querySelector('canvas');
 		var url = this.value;
     		var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
     if (document.querySelector('input').files && document.querySelector('input').files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
@@ -99,9 +100,9 @@
  function text(event) {
 	var canvas = document.querySelector('canvas');
 	var ctx = canvas.getContext("2d");
-	ctx.font = "30px Arial";
-	ctx.fillText(document.querySelectorAll('input')[1].value,10,50);
-	ctx.fillText(document.querySelectorAll('input')[2].value,10,240);
+	ctx.font = "100px Arial";
+	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
+	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
  }
 document.querySelectorAll('[type=text]')[0].addEventListener("change", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("change", text, false);
