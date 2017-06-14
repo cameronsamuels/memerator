@@ -70,6 +70,33 @@
 		</center>
 		<footer><small>&copy; Copyright &copy; 2017 Cameron Samuels, Toby Latino, Leo Gallis. All right reserved.</small></footer>
 		<script>
+			function getOrientation(file, callback) {
+				  var reader = new FileReader();
+				  reader.onload = function(e) {
+
+				    var view = new DataView(e.target.result);
+				    if (view.getUint16(0, false) != 0xFFD8) return callback(-2);
+				    var length = view.byteLength, offset = 2;
+				    while (offset < length) {
+				      var marker = view.getUint16(offset, false);
+				      offset += 2;
+				      if (marker == 0xFFE1) {
+					if (view.getUint32(offset += 2, false) != 0x45786966) return callback(-1);
+					var little = view.getUint16(offset += 6, false) == 0x4949;
+					offset += view.getUint32(offset + 4, little);
+					var tags = view.getUint16(offset, little);
+					offset += 2;
+					for (var i = 0; i < tags; i++)
+					  if (view.getUint16(offset + (i * 12), little) == 0x0112)
+					    return callback(view.getUint16(offset + (i * 12) + 8, little));
+				      }
+				      else if ((marker & 0xFF00) != 0xFF00) break;
+				      else offset += view.getUint16(offset, false);
+				    }
+				    return callback(-1);
+				  };
+				  reader.readAsArrayBuffer(file);
+				}
 			var $ = function(i){return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
 			canvas.width = 1024, canvas.height = 1024;
 			$('[type=file]').addEventListener("change", function(event) {
@@ -78,21 +105,24 @@
 					var reader = new FileReader();
 					reader.onloadend = function() {
 						var canvas = $("canvas"), ctx = canvas.getContext("2d"), oc = document.createElement('canvas'), octx = oc.getContext('2d');
-						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
-						switch(exif.Orientation){
-						   case 8:
-						   ctx.rotate(90*Math.PI/180);
-						   octx.rotate(90*Math.PI/180);
-						   break;
-						   case 3:
-						   ctx.rotate(180*Math.PI/180);
-						   octx.rotate(180*Math.PI/180);
-						   break;
-						   case 6:
-						   ctx.rotate(-90*Math.PI/180);
-						   octx.rotate(-90*Math.PI/180);	
-						   break;
-						}
+						getOrientation($('[type=file]').files[0], function(orientation) {
+						    alert('orientation: ' + orientation);
+						  });
+						// 						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
+// 						switch(exif.Orientation){
+// 						   case 8:
+// 						   ctx.rotate(90*Math.PI/180);
+// 						   octx.rotate(90*Math.PI/180);
+// 						   break;
+// 						   case 3:
+// 						   ctx.rotate(180*Math.PI/180);
+// 						   octx.rotate(180*Math.PI/180);
+// 						   break;
+// 						   case 6:
+// 						   ctx.rotate(-90*Math.PI/180);
+// 						   octx.rotate(-90*Math.PI/180);	
+// 						   break;
+// 						}
 						img = new Image();
 						img.onload = function() {
 							oc.width = img.width;
