@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Memerator</title>
+		<meta name="description" content="Create all of your favorite memes for FREE!">
+		<style>
+			<!-- CSS not made by me!-->
+			form div {
+				overflow: hidden;
+				position: relative;
+			}
+
+			form div [type=file] {
+				cursor: inherit;
+				display: block;
+				font-size: 999px;
+				filter: alpha(opacity=0);
+				min-height: 100%;
+				min-width: 100%;
+				opacity: 0;
+				position: absolute;
+				right: 0;
+				left: 0;
+				text-align: right;
+				top: 0;
+			}
+			
+			form div {
+				background: gray;
+				border-radius: .5em;
+				float: center;
+				padding: .5em;
+				max-width: 20%;
+			}
+
+			form div [type=file] {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas"></canvas>
+		<center>
+			<form>
+				<div id="upload">Upload image<input type="file" /></div>
+			</form>
+			<br>
+			<form>
+				<label>Top text:</label>
+				<input type="text" />
+				<p></p>
+				<label>Bottom text:</label>
+				<input type="text" />
+			</form>
+		</center>
+		<script>
+			
