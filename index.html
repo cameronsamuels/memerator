@@ -102,6 +102,9 @@ var canvas = document.querySelector('canvas');
 	 var canvas = document.querySelector('canvas');
 	var ctx = canvas.getContext("2d");
 	 ctx.clearRect(0, 0, canvas.width, canvas.height);
+	 ctx.font = "100px Arial";
+	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
+	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
 	 if ("createEvent" in document) {
 	    var evt = document.createEvent("HTMLEvents");
 	    evt.initEvent("change", false, true);
@@ -109,10 +112,7 @@ var canvas = document.querySelector('canvas');
 	}
 	else
 	   document.querySelector('[type=file]').fireEvent("onchange");
-	ctx.font = "100px Arial";
-	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
-	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
  }
-document.querySelectorAll('[type=text]')[0].addEventListener("keypress", text, false);
-document.querySelectorAll('[type=text]')[1].addEventListener("keypress", text, false);
+document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
+document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
 		</script>
