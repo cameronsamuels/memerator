@@ -98,8 +98,12 @@
 					$('[type=file]').dispatchEvent(evt);
 				} else $('[type=file]').fireEvent("onchange");
 				setTimeout(function() {
-					ctx.font = "100px Arial";
-					ctx.textAlign="center"; 
+					ctx.font = "100px impact";
+					ctx.textAlign="center";
+					ctx.lineWidth = 3;
+					ctx.strokeStyle = '#fff';
+					ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width/2, 200);
+					ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width/2, 850);
 					ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width/2, 200);
 					ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width/2, 850);
 				}, 1000);
