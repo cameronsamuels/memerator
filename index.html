@@ -54,4 +54,38 @@
 			</form>
 		</center>
 		<script>
-			
+			document.querySelector('[type=file]').addEventListener("change", function(event) {
+		var canvas = document.querySelector('canvas');
+		var url = this.value;
+    		var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (document.querySelector('input').files && document.querySelector('input').files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
+     {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+//           document.querySelector('img').setAttribute('src', e.target.result);
+			var canvas = document.querySelector("canvas");
+			var ctx = canvas.getContext("2d");
+			img = new Image();
+			img.onload = function () {
+				canvas.height = canvas.width * (img.height / img.width);
+				/// step 1
+				var oc = document.createElement('canvas'),
+					octx = oc.getContext('2d');
+				oc.width = img.width * 0.5;
+				oc.height = img.height * 0.5;
+				octx.drawImage(img, 0, 0, oc.width, oc.height);
+				/// step 2
+				octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
+				ctx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5,
+				0, 0, canvas.width, canvas.height);
+			}
+			img.src = e.target.result;
+        }
+       reader.readAsDataURL(document.querySelector('[type=file]').files[0]);
+    }
+    else
+    {
+      //$('#img').attr('src', '/assets/no_preview.png');
+    }
+}, false);
+		</script>
