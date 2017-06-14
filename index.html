@@ -1,12 +1,10 @@
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 	<head>
 		<title>Memerator</title>
-		<meta name="description" content="Create all of your favorite memes for FREE!">
+		<meta name="description" content="Create memes for FREE!">
 		<meta name="viewport" content="user-scalable=yes,initial-scale=1,width=deice-width">
 		<style>
-			<!-- CSS not made by me!-->
 			form div {
 				overflow: hidden;
 				position: relative;
@@ -19,7 +17,6 @@
 				opacity: 0;
 				height: 50px;
 				position: absolute;
-
 				top: 0;
 			}
 			
@@ -52,18 +49,14 @@
 	</head>
 	<body>
 		<canvas id="myCanvas"></canvas>
-		<p></p>
-		<center>
-			<form>
-				<div id="upload">Upload image<input type="file" /></div>
-				<p></p>
-				<label>Top text:</label>
-				<input type="text" />
-				<p></p>
-				<label>Bottom text:</label>
-				<input type="text" />
-			</form>
-		</center>
+		<form>
+			<div id="upload">Upload image<input type="file" /></div>
+			<label>Top text:</label>
+			<input type="text" />
+			<p></p>
+			<label>Bottom text:</label>
+			<input type="text" />
+		</form>
 		<script>
 			var img;
 			var canvas = document.querySelector('canvas');
