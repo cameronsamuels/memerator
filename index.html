@@ -100,8 +100,8 @@
 				setTimeout(function() {
 					ctx.font = "100px Arial";
 					ctx.textAlign="center"; 
-					ctx.fillText(document.querySelectorAll('input')[1].value, 0, 200);
-					ctx.fillText(document.querySelectorAll('input')[2].value, 0, 850);
+					ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width/2, 200);
+					ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width/2, 850);
 				}, 1000);
 			}
 			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
