@@ -70,7 +70,6 @@
 				if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 					var reader = new FileReader();
 					reader.onload = function(e) {
-						//           document.querySelector('img').setAttribute('src', e.target.result);
 						var canvas = $("canvas"), ctx = canvas.getContext("2d");
 						img = new Image();
 						img.onload = function() {
@@ -86,7 +85,7 @@
 					}
 					reader.readAsDataURL($('[type=file]').files[0]);
 				} else {
-					//$('#img').attr('src', '/assets/no_preview.png');
+					//not img
 				}
 			}, false);
 
@@ -106,4 +105,4 @@
 			}
 			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 			document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
-</script>
+</script></body></html>
