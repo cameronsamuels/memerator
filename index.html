@@ -106,23 +106,22 @@
 					reader.onloadend = function(e) {
 						var canvas = $("canvas"), ctx = canvas.getContext("2d"), oc = document.createElement('canvas'), octx = oc.getContext('2d');
 						getOrientation($('[type=file]').files[0], function(orientation) {
-						    alert('orientation: ' + orientation);
+						   switch(exif.Orientation){
+						   case 8:
+						   ctx.rotate(90*Math.PI/180);
+						   octx.rotate(90*Math.PI/180);
+						   break;
+						   case 3:
+						   ctx.rotate(180*Math.PI/180);
+						   octx.rotate(180*Math.PI/180);
+						   break;
+						   case 6:
+						   ctx.rotate(-90*Math.PI/180);
+						   octx.rotate(-90*Math.PI/180);	
+						   break;
+						}
 						  });
 						// 						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
-// 						switch(exif.Orientation){
-// 						   case 8:
-// 						   ctx.rotate(90*Math.PI/180);
-// 						   octx.rotate(90*Math.PI/180);
-// 						   break;
-// 						   case 3:
-// 						   ctx.rotate(180*Math.PI/180);
-// 						   octx.rotate(180*Math.PI/180);
-// 						   break;
-// 						   case 6:
-// 						   ctx.rotate(-90*Math.PI/180);
-// 						   octx.rotate(-90*Math.PI/180);	
-// 						   break;
-// 						}
 						img = new Image();
 						img.onload = function() {
 							oc.width = img.width;
