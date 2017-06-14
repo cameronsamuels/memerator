@@ -4,63 +4,7 @@
 		<title>Memerator</title>
 		<meta name="description" content="Create memes for FREE!">
 		<meta name="viewport" content="user-scalable=yes,initial-scale=1,width=deice-width">
-		<style>
-			html, body {
-				font-family: arial;
-				overflow: hidden;
-				font-weight: 100;
-			}
-			form div {
-				overflow: hidden;
-				position: relative;
-				font-family: impact, arial;
-			}
-			form {
-				font-family: impact, arial;
-			}
-
-			form div [type=file] {
-				cursor: inherit;
-				display: block;
-				filter: alpha(opacity=0);
-				opacity: 0;
-				height: 50px;
-				position: absolute;
-				top: 0;
-			}
-			
-			form div {
-				background: gray;
-				border-radius: 6px;
-				left: 0;
-				right: 0;
-				margin: 16px auto;
-				max-width: 20%;
-				height: 50px;
-				overflow: hidden;
-				position: relative;
-				line-height: 50px;
-				vertical-align: middle;
-			}
-
-			form div [type=file] {
-				cursor: pointer;
-			}
-			canvas {
-				height: 100vw;
-				max-height: 40vh;
-				margin: auto;
-				margin-top: 50px;
-				padding: 0;
-				display: block;
-			}
-			footer {
-				position: absolute;
-				bottom: 0;
-				width: 100%;
-				text-align: center;
-			}
-		</style>
+		<link href="style.css" rel="stylesheet" />
 	</head>
 	<body>
 		<canvas id="myCanvas"></canvas>
