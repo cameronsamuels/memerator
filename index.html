@@ -61,6 +61,7 @@
 			</form>
 		</center>
 		<script>
+			var img;
 			var canvas = document.querySelector('canvas');
 		canvas.width = 1024;
 		canvas.height = 1024;
@@ -98,8 +99,10 @@ var canvas = document.querySelector('canvas');
     }
 			}, false);
  function text(event) {
-	var canvas = document.querySelector('canvas');
+	 var canvas = document.querySelector('canvas');
 	var ctx = canvas.getContext("2d");
+	 ctx.clearRect(0, 0, canvas.width, canvas.height);
+	 document.querySelector('[type=file]').onchange();
 	ctx.font = "100px Arial";
 	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
 	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
