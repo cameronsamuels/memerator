@@ -63,58 +63,53 @@
 		<script>
 			var img;
 			var canvas = document.querySelector('canvas');
-		canvas.width = 1024;
-		canvas.height = 1024;
+			canvas.width = 1024;
+			canvas.height = 1024;
 			document.querySelector('[type=file]').addEventListener("change", function(event) {
-var canvas = document.querySelector('canvas');
-		var url = this.value;
-    		var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-    if (document.querySelector('input').files && document.querySelector('input').files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
-     {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-//           document.querySelector('img').setAttribute('src', e.target.result);
-			var canvas = document.querySelector("canvas");
-			var ctx = canvas.getContext("2d");
-			img = new Image();
-			img.onload = function () {
-				/// step 1
-				var oc = document.createElement('canvas'),
-					octx = oc.getContext('2d');
-				oc.width = img.width;
-				oc.height = img.height;
-				octx.drawImage(img, 0, 0, oc.width, oc.height);
-				/// step 2
-				octx.drawImage(oc, 0, 0, oc.width, oc.height);
-				ctx.drawImage(oc, 0, 0, oc.width, oc.height,
-				0, 0, canvas.width, canvas.height);
-			}
-			img.src = e.target.result;
-        }
-       reader.readAsDataURL(document.querySelector('[type=file]').files[0]);
-    }
-    else
-    {
-      //$('#img').attr('src', '/assets/no_preview.png');
-    }
+				var canvas = document.querySelector('canvas');
+				var url = this.value;
+				var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+				if (document.querySelector('input').files && document.querySelector('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						//           document.querySelector('img').setAttribute('src', e.target.result);
+						var canvas = document.querySelector("canvas");
+						var ctx = canvas.getContext("2d");
+						img = new Image();
+						img.onload = function() {
+							/// step 1
+							var oc = document.createElement('canvas'),
+								octx = oc.getContext('2d');
+							oc.width = img.width;
+							oc.height = img.height;
+							octx.drawImage(img, 0, 0, oc.width, oc.height);
+							/// step 2
+							octx.drawImage(oc, 0, 0, oc.width, oc.height);
+							ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, canvas.width, canvas.height);
+						}
+						img.src = e.target.result;
+					}
+					reader.readAsDataURL(document.querySelector('[type=file]').files[0]);
+				} else {
+					//$('#img').attr('src', '/assets/no_preview.png');
+				}
 			}, false);
- function text(event) {
-	 var canvas = document.querySelector('canvas');
-	var ctx = canvas.getContext("2d");
-	 ctx.clearRect(0, 0, canvas.width, canvas.height);
-	 if ("createEvent" in document) {
-	    var evt = document.createEvent("HTMLEvents");
-	    evt.initEvent("change", false, true);
-	    document.querySelector('[type=file]').dispatchEvent(evt);
-	}
-	else
-	   document.querySelector('[type=file]').fireEvent("onchange");
-	setTimeout(function(){
-	 ctx.font = "100px Arial";
-	ctx.fillText(document.querySelectorAll('input')[1].value,10,200);
-	ctx.fillText(document.querySelectorAll('input')[2].value,10,850);
-	}, 1000);
- }
-document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
-document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
-		</script>
+
+			function text(event) {
+				var canvas = document.querySelector('canvas');
+				var ctx = canvas.getContext("2d");
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				if ("createEvent" in document) {
+					var evt = document.createEvent("HTMLEvents");
+					evt.initEvent("change", false, true);
+					document.querySelector('[type=file]').dispatchEvent(evt);
+				} else document.querySelector('[type=file]').fireEvent("onchange");
+				setTimeout(function() {
+					ctx.font = "100px Arial";
+					ctx.fillText(document.querySelectorAll('input')[1].value, 10, 200);
+					ctx.fillText(document.querySelectorAll('input')[2].value, 10, 850);
+				}, 1000);
+			}
+			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
+			document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
+</script>
