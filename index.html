@@ -166,13 +166,13 @@
 				setTimeout(function() {
 					ctx.font = (canvas.height/8) + "px impact";
 					ctx.textAlign="center";
-					ctx.lineWidth = 5;
+					ctx.lineWidth = canvas.height/32;
 					ctx.fillStyle = "#fff";
 					ctx.strokeStyle = '#000';
 					ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width/2, 100);
-					ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width/2, 974);
+					ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width/2, canvas.height-(canvas.height/16));
 					ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width/2, 100);
-					ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width/2, 974);
+					ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width/2, canvas.height-(canvas.height/16));
 				}, 1000);
 			}
 			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
