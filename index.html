@@ -103,7 +103,7 @@
 				var canvas = $('canvas'), url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
 				if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 					var reader = new FileReader();
-					reader.onloadend = function() {
+					reader.onloadend = function(e) {
 						var canvas = $("canvas"), ctx = canvas.getContext("2d"), oc = document.createElement('canvas'), octx = oc.getContext('2d');
 						getOrientation($('[type=file]').files[0], function(orientation) {
 						    alert('orientation: ' + orientation);
