@@ -99,8 +99,9 @@
 				} else $('[type=file]').fireEvent("onchange");
 				setTimeout(function() {
 					ctx.font = "100px Arial";
-					ctx.fillText(document.querySelectorAll('input')[1].value, 10, 200);
-					ctx.fillText(document.querySelectorAll('input')[2].value, 10, 850);
+					ctx.textAlign="center"; 
+					ctx.fillText(document.querySelectorAll('input')[1].value, 0, 200);
+					ctx.fillText(document.querySelectorAll('input')[2].value, 0, 850);
 				}, 1000);
 			}
 			document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
