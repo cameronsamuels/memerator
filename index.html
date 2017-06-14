@@ -69,12 +69,25 @@
 				var canvas = $('canvas'), url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
 				if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 					var reader = new FileReader();
-					reader.onload = function(e) {
-						var canvas = $("canvas"), ctx = canvas.getContext("2d");
+					reader.onloadend = function() {
+						var canvas = $("canvas"), ctx = canvas.getContext("2d"), oc = document.createElement('canvas'), octx = oc.getContext('2d');
+						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
+						switch(exif.Orientation){
+						   case 8:
+						   ctx.rotate(90*Math.PI/180);
+						   octx.rotate(90*Math.PI/180);
+						   break;
+						   case 3:
+						   ctx.rotate(180*Math.PI/180);
+						   octx.rotate(180*Math.PI/180);
+						   break;
+						   case 6:
+						   ctx.rotate(-90*Math.PI/180);
+						   octx.rotate(-90*Math.PI/180);	
+						   break;
+						}
 						img = new Image();
 						img.onload = function() {
-							var oc = document.createElement('canvas'),
-							octx = oc.getContext('2d');
 							oc.width = img.width;
 							oc.height = img.height;
 							octx.drawImage(img, 0, 0, oc.width, oc.height);
@@ -82,7 +95,7 @@
 							ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, canvas.width, canvas.height);
 						}
 						img.src = e.target.result;
-					}
+					};
 					reader.readAsDataURL($('[type=file]').files[0]);
 				} else {
 					//not img
