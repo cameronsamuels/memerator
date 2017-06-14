@@ -64,7 +64,6 @@
 			var ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function () {
-				canvas.height = canvas.width * (img.height / img.width);
 				/// step 1
 				var oc = document.createElement('canvas'),
 					octx = oc.getContext('2d');
