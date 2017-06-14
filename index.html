@@ -93,9 +93,13 @@
     {
       //$('#img').attr('src', '/assets/no_preview.png');
     }
+			}, false);
+ function text(event) {
 	var ctx = canvas.getContext("2d");
 	ctx.font = "30px Arial";
-	ctx.fillText(document.querySelectorAll('input')[1].value,10,50);
-	ctx.fillText(document.querySelectorAll('input')[2].value,10,50);
-}, false);
+	ctx.fillText(document.querySelectorAll('input')[1].value,10,5);
+	ctx.fillText(document.querySelectorAll('input')[2].value,10,240);
+ }
+document.querySelectorAll('[type=text]')[0].addEventListener("change", text, false);
+document.querySelectorAll('[type=text]')[1].addEventListener("change", text, false);
 		</script>
