@@ -28,7 +28,7 @@ form {
 	width: 100%;
 	max-width: 300px;
 }
-form div:not(#after) {
+form div:not(#after):not([class]) {
 	display: block;	
 }
 a {
