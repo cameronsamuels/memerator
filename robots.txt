@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /memerator/style.css
-Disallow: /memerator/script.js
+Disallow: /memerator/abc
