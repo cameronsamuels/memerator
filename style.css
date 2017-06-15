@@ -54,3 +54,6 @@ canvas {
 form p {
 	margin: 5px;
 }
+img {
+	margin: auto;
+	z-index: -1;
