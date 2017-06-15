@@ -20,7 +20,7 @@ form div [type=file] {
 	position: absolute;
 	top: 0;
 }
-form div {
+form div, a {
 	background: gray;
 	border-radius: 6px;
 	left: 0;
