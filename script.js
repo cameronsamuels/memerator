@@ -8,11 +8,12 @@ d('[type=file]').addEventListener("change", function(event) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
 			var canvas = d("canvas"), ctx = canvas.getContext("2d");
-			var canvasback = d("backgroundCanvas"), ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
 				canvas.height = img.height;
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+				ctx.globalCompositeOperation = 'destination-over';
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d("form").innerHTML = '<div id="upload" class="waves-effect waves-light btn">Upload<input type="file" /></div><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
 				ctx.font = (canvas.height / 8) + "px impac";
