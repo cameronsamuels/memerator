@@ -44,7 +44,7 @@ form a {
 form div [type=file] {
 	cursor: pointer;
 }
-form div:nth-child(2) {
+#download {
 	display: none !important;
 }
 canvas {
