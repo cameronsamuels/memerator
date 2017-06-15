@@ -21,15 +21,10 @@ form div [type=file] {
 	top: 0;
 }
 form div, a {
-	background: gray;
 	border-radius: 6px;
-	left: 0;
-	right: 0;
-	margin: 16px auto;
+	margin: 5px;
 	max-width: 40%;
 	height: 50px;
-	overflow: hidden;
-	position: relative;
 	line-height: 50px;
 	vertical-align: middle;
 }
