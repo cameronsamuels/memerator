@@ -11,6 +11,7 @@ form {
 	font-family: impact, impac, arial;
 	width: 100%;
 	max-width: 300px;
+	margin: 10px;
 }
 form div [type=file] {
 	cursor: inherit;
@@ -25,8 +26,6 @@ form div:not(.row):not(.row div) {
 	max-width: 40%;
 	overflow: hidden;
 	position: relative;
-}
-form div:not(.row):not(.row div), form a {
 	margin: 5px;
 }
 form div:not([class]) {
