@@ -30,16 +30,23 @@ var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fix
 function update() { //updates text
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	
+	// roate the canvas by +90% (==Math.PI/2)
 	ctx.rotate(r);
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-	rad = r;
-	if (rad%1.5708 != 0) {
-		var width = canvas.width;
-		canvas.width = canvas.height;
-		canvas.height = width;
-	}
+
+	// draw the signature
+	// since images draw from top-left offset the draw by 1/2 width & height
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+
+	// un-rotate the canvas by -90% (== -Math.PI/2)
 	ctx.rotate(-r);
+
+	// un-translate the canvas back to origin==top-left canvas
+	ctx.translate(-canvas.width / 2, -canvas.height / 2);
+
+	// testing...just draw a rect top-left
+	ctx.fillRect(0, 0, 25, 10);
+	
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -50,16 +57,24 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	ctx.rotate(1.5708);
-        ctx.translate(canvas.width / 2, canvas.height / 2);
 	r += 1.5708;
-	rad = r;
-	if (rad%1.5708 != 0) {
-		var width = canvas.width;
-		canvas.width = canvas.height;
-		canvas.height = width;
-	}
+	
+	// roate the canvas by +90% (==Math.PI/2)
+	ctx.rotate(r);
+
+	// draw the signature
+	// since images draw from top-left offset the draw by 1/2 width & height
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+
+	// un-rotate the canvas by -90% (== -Math.PI/2)
+	ctx.rotate(-r);
+
+	// un-translate the canvas back to origin==top-left canvas
+	ctx.translate(-canvas.width / 2, -canvas.height / 2);
+
+	// testing...just draw a rect top-left
+	ctx.fillRect(0, 0, 25, 10);
+
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
