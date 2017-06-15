@@ -41,7 +41,7 @@ d('[type=file]').addEventListener("change", function(event) {
 function text(event) { // handles the text side of the meme
 	var canvas = d('canvas'),
 		ctx = canvas.getContext("2d");
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	//ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
 		evt.initEvent("change", false, true);
