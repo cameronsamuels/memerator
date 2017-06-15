@@ -32,14 +32,14 @@ function update() { //updates text
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(r);
+        ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	if (r%1.5708 != 0) {
 		var width = canvas.width;
 		canvas.width = canvas.height;
 		canvas.height = width;
 	}
-        ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-	ctx.rotate(0);
+	ctx.rotate(-r);
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -53,14 +53,14 @@ function rotate() { // handles rotation on click
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(1.5708);
 	r += 1.5708;
+        ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	if (r%1.5708 != 0) {
 		var width = canvas.width;
 		canvas.width = canvas.height;
 		canvas.height = width;
 	}
-        ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-	ctx.rotate(0);
+	ctx.rotate(-r);
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
