@@ -11,6 +11,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d('form div:nth-child(2)').id = '';
+				//if (d("#after").innerHTML == "") d("form").innerHTML = d("form").innerHTML.replace('<div id="after"></div>', '') + '<div class="waves-effect waves-light btn"><a download="meme.png">Download</a></div><div id="after"><p>Top text:</p><input type="text" onkeyup="text()" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input onkeyup="text()" type="text" placeholder="memes with memerator" /></div>';
 				ctx.font = (canvas.height / 8) + "px impac";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
@@ -40,13 +41,10 @@ function update() { //updates text
 	} else d('[type=file]').fireEvent("onchange");
 }
 function rotate() { // handles rotation on click
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	// save the unrotated context of the canvas so we can restore it later
-	// the alternative is to untranslate & unrotate after drawing
-	// move to the center of the canvas
-	// rotate the canvas to the specified degrees
-	ctx.rotate(1.5708);
-	ctx.translate(canvas.width / 2, canvas.height / 2);
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.save();
+        ctx.translate(canvas.width/2,canvas.height/2);
+        ctx.rotate(1.5708);
 	var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
@@ -54,7 +52,8 @@ function rotate() { // handles rotation on click
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				ctx.drawImage(img, 0, 0);
+				ctx.drawImage(img,-img.width/2,-img.width/2);
+				ctx.restore();
 			}
 			img.src = e.target.result;
 		};
