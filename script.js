@@ -29,8 +29,6 @@ var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fix
 function update() { //updates text
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	canvas.width = img.width;
-	canvas.height = img.height;
 // 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(r);
