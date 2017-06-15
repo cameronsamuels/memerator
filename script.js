@@ -57,6 +57,7 @@ function rotate(degrees) {
 	    context.translate(canvas.width/2,canvas.height/2);
 	    // rotate the canvas to the specified degrees
 	    context.rotate(1.5708);
+	context.translate(-canvas.width/2, -canvas.height/2);
 	
 		var url = $('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
