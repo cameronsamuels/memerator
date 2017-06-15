@@ -60,10 +60,9 @@ function rotate(degrees) { // handles rotation
 	    // the alternative is to untranslate & unrotate after drawing
 
 	    // move to the center of the canvas
-	    ctx.translate(canvas.width/2,canvas.height/2);
 	    // rotate the canvas to the specified degrees
 	    ctx.rotate(1.5708);
-	ctx.translate(-canvas.width/2, -canvas.height/2);
+	    ctx.translate(canvas.width/2, canvas.height/2);
 	
 		var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
