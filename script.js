@@ -12,6 +12,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d('form div:nth-child(2)').id = '';
+				ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
