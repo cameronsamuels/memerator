@@ -36,7 +36,7 @@ function update() { //updates text
 
 	// draw the signature
 	// since images draw from top-left offset the draw by 1/2 width & height
-	ctx.drawImage(img, -canvas.width, -canvas.height);
+	ctx.drawImage(img, -img.width / 2, -img.height / 2);
 
 	// un-rotate the canvas by -90% (== -Math.PI/2)
 	ctx.rotate(-r);
@@ -64,7 +64,7 @@ function rotate() { // handles rotation on click
 
 	// draw the signature
 	// since images draw from top-left offset the draw by 1/2 width & height
-	ctx.drawImage(img, -canvas.width, -canvas.height);
+	ctx.drawImage(img, -img.width / 2, -img.height / 2);
 
 	// un-rotate the canvas by -90% (== -Math.PI/2)
 	ctx.rotate(-r);
