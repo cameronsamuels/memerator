@@ -3,6 +3,9 @@ html, body {
 	font-family: arial;
 	overflow: hidden;
 	font-weight: 100;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
 }
 form div:not(#after) {
 	overflow: hidden;
