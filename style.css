@@ -22,10 +22,12 @@ form div [type=file] {
 	top: 0;
 }
 form div:not(.row):not(.row div) {
-	margin: 5px;
 	max-width: 40%;
 	overflow: hidden;
 	position: relative;
+}
+form div:not(.row):not(.row div), form a {
+	margin: 5px;
 }
 form div:not([class]) {
 	display: block;	
