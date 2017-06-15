@@ -50,7 +50,13 @@ function text(event) {
 function rotate() {
 	var canvas = $('canvas'),
 	ctx = canvas.getContext("2d");
-	ctx.rotate(90 * Math.PI / 180);
+	ctx.rotate(90 * Math.PI / 90);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	if ("createEvent" in document) {
+	var evt = document.createEvent("HTMLEvents");
+	evt.initEvent("change", false, true);
+	$('[type=file]').dispatchEvent(evt);
+	} else $('[type=file]').fireEvent("onchange");
 }
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
