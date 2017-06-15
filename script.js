@@ -35,7 +35,7 @@ $('[type=file]').addEventListener("change", function(event) {
 		reader.onloadend = function(e) {
 			var canvas = $("canvas"),
 				ctx = canvas.getContext("2d"),
-				oc = document.createElement('canvas'),
+				oc = document.createElement('canvas');
 			getOrientation($('[type=file]').files[0], function(orientation) {
 				switch (orientation) {
 					case 8:
