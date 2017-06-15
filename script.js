@@ -27,7 +27,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				d('a').style.visibility = 'visible';
-				d("form").innerHTML += '<a download="meme.png" class="waves-effect waves-light btn">Download</a><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
+				d("form").innerHTML = '<div id="upload" class="waves-effect waves-light btn">Upload<input type="file" /></div><a download="meme.png" class="waves-effect waves-light btn">Download</a><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
 				d('a').href = canvas.toDataURL();
 				document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
