@@ -72,6 +72,11 @@ function rotate(degrees) { // handles rotation
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
 	}
+	if ("createEvent" in document) {
+		var evt = document.createEvent("HTMLEvents");
+		evt.initEvent("change", false, true);
+		d('[type=file]').dispatchEvent(evt);
+	} else d('[type=file]').fireEvent("onchange");
 	    // draw the image
 	    // since the context is rotated, the image will be rotated also
 	    
