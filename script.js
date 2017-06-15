@@ -58,7 +58,7 @@ function rotate(degrees) {
 	    context.translate(canvas.width/2,canvas.height/2);
 
 	    // rotate the canvas to the specified degrees
-	    context.rotate(degrees*Math.PI/180);
+	    context.rotate(degrees*Math.PI/90);
 	
 		var url = $('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
@@ -67,7 +67,7 @@ function rotate(degrees) {
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				context.drawImage(img,-img.width/2,-img.width/2);
+				context.drawImage(img,0,0);
 			}
 			img.src = e.target.result;
 		};
