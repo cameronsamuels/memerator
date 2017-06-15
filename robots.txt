@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /script.js
+Disallow: /style.css
+Allow: /robots.txt
