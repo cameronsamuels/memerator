@@ -37,7 +37,7 @@ form div {
 	display: block;	
 }
 a {
-	display: none;
+	visibility: hidden;
 	text-decoration: none;
 	color: #000;
 }
