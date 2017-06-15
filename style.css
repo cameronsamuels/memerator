@@ -21,12 +21,8 @@ form div [type=file] {
 	top: 0;
 }
 form div:not(#after), a {
-	border-radius: 6px;
 	margin: 5px;
 	max-width: 40%;
-	height: 50px;
-	line-height: 50px;
-	vertical-align: middle;
 }
 form {
 	width: 100%;
