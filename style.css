@@ -4,7 +4,7 @@ html, body {
 	overflow: hidden;
 	font-weight: 100;
 }
-form div {
+form div:not(#after) {
 	overflow: hidden;
 	position: relative;
 }
@@ -20,7 +20,7 @@ form div [type=file] {
 	position: absolute;
 	top: 0;
 }
-form div, a {
+form div:not(#after), a {
 	border-radius: 6px;
 	margin: 5px;
 	max-width: 40%;
@@ -32,7 +32,7 @@ form {
 	width: 100%;
 	max-width: 300px;
 }
-form div {
+form div:not(#after) {
 	display: block;	
 }
 a {
