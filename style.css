@@ -20,7 +20,7 @@ form div [type=file] {
 	position: absolute;
 	top: 0;
 }
-form div:not(#after), a {
+form div:not(#after) {
 	margin: 5px;
 	max-width: 40%;
 }
