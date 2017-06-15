@@ -7,7 +7,7 @@ html, body {
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
 }
-form div:not([class]) {
+form div {
 	overflow: hidden;
 	position: relative;
 }
@@ -23,7 +23,7 @@ form div [type=file] {
 	position: absolute;
 	top: 0;
 }
-form div:not([class]) {
+form div {
 	margin: 5px;
 	max-width: 40%;
 }
