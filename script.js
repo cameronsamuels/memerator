@@ -11,7 +11,6 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d('form div:nth-child(2)').id = '';
-				//if (d("#after").innerHTML == "") d("form").innerHTML = d("form").innerHTML.replace('<div id="after"></div>', '') + '<div class="waves-effect waves-light btn"><a download="meme.png">Download</a></div><div id="after"><p>Top text:</p><input type="text" onkeyup="text()" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input onkeyup="text()" type="text" placeholder="memes with memerator" /></div>';
 				ctx.font = (canvas.height / 8) + "px impac";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
