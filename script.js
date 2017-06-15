@@ -23,9 +23,7 @@ function getOrientation(file, callback) {
 	};
 	reader.readAsArrayBuffer(file);
 }
-var $ = function(i) {
-		return document.querySelector(i)
-	},
+var $ = function(i) { return document.querySelector(i)},
 	img, canvas = document.querySelector('canvas');
 canvas.width = 1024, canvas.height = 1024;
 $('[type=file]').addEventListener("change", function(event) {
@@ -103,9 +101,9 @@ function text(event) {
 		ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 		ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	}, 1000);
+	$('a').style.display = 'block';
+	$('a').href = canvas.toDataURL();
 }
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
-document.ontouchmove = function(e) {
-	e.preventDefault()
-};
+document.ontouchmove=function(e){e.preventDefault()};
