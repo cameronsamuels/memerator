@@ -36,9 +36,10 @@ a {
 	color: #fff !important;
 }
 form a {
-	width: 100%;
+	width: calc(100% + 2rem);
 	height: 100%;
 	display: block;
+	margin-left: -1rem;
 }
 form div [type=file] {
 	cursor: pointer;
