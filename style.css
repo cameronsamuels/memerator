@@ -7,10 +7,9 @@ html, body {
 form div {
 	overflow: hidden;
 	position: relative;
-	font-family: impact, impac, arial;
 }
 form {
-	font-family: impact, arial;
+	font-family: impact, impac, arial;
 }
 form div [type=file] {
 	cursor: inherit;
