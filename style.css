@@ -1,14 +1,12 @@
 @font-face{font-family:impac;src:url('impact.ttf') format("truetype")}
 html, body {
-	font-family: arial;
+	font-family: impact, impac, arial;
 	overflow: hidden;
-	font-weight: 100;
 	user-select: none;
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
 }
 form {
-	font-family: impact, impac, arial;
 	width: 100%;
 	max-width: 300px;
 	margin: 10px;
@@ -28,9 +26,6 @@ form div:not(.row):not(.row div) {
 	position: relative;
 	margin: 15px;
 }
-form div:not([class]) {
-	display: block;	
-}
 form a {
 	text-decoration: none;
 	color: #fff !important;
@@ -39,9 +34,7 @@ form a {
 	display: block;
 	margin-left: -2rem;
 }
-#download {
-	display: none !important;
-}
+#download { display: none !important }
 canvas {
 	height: 100vw;
 	max-height: 40vh;
@@ -49,9 +42,6 @@ canvas {
 	margin-top: 15px;
 	padding: 0;
 	display: block !important;
-}
-form p {
-	margin: 5px;
 }
 .row, input {
 	margin-bottom: 3px !important;	
