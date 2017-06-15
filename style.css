@@ -21,7 +21,7 @@ form div [type=file] {
 	position: absolute;
 	top: 0;
 }
-form div {
+form div:not(.row):not(.row div) {
 	margin: 5px;
 	max-width: 40%;
 	overflow: hidden;
