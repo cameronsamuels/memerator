@@ -7,12 +7,10 @@ html, body {
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
 }
-form div {
-	overflow: hidden;
-	position: relative;
-}
 form {
 	font-family: impact, impac, arial;
+	width: 100%;
+	max-width: 300px;
 }
 form div [type=file] {
 	cursor: inherit;
@@ -26,26 +24,19 @@ form div [type=file] {
 form div {
 	margin: 5px;
 	max-width: 40%;
-}
-form {
-	width: 100%;
-	max-width: 300px;
+	overflow: hidden;
+	position: relative;
 }
 form div:not([class]) {
 	display: block;	
 }
-a {
+form a {
 	text-decoration: none;
 	color: #fff !important;
-}
-form a {
 	width: calc(100% + 4rem);
 	height: 100%;
 	display: block;
 	margin-left: -2rem;
-}
-form div [type=file] {
-	cursor: pointer;
 }
 #download {
 	display: none !important;
