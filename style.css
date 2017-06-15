@@ -42,6 +42,7 @@ canvas {
 	margin-top: 15px;
 	padding: 0;
 	display: block !important;
+	background: url(meme.png) no-repeat 100%/cover;
 }
 .row, input {
 	margin-bottom: 3px !important;	
