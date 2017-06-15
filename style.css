@@ -33,6 +33,12 @@ form div, a {
 	line-height: 50px;
 	vertical-align: middle;
 }
+form div {
+	display: block;	
+}
+a {
+	display: none;
+}
 form div [type=file] {
 	cursor: pointer;
 }
