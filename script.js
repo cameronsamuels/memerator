@@ -29,6 +29,8 @@ d('[type=file]').addEventListener("change", function(event) {
 				d('a').style.visibility = 'visible';
 				d("form").innerHTML += '<a download="meme.png" class="waves-effect waves-light btn">Download</a><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
 				d('a').href = canvas.toDataURL();
+				document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
+				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
 			}
 			img.src = e.target.result;
 		};
@@ -84,5 +86,3 @@ function rotate(degrees) { // handles rotation
 
 	    // we’re done with the rotating so restore the unrotated context
 }	
-document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
-document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
