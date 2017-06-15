@@ -28,7 +28,7 @@ d('[type=file]').addEventListener("change", function(event) {
 			canvas.style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
-	} else { // not img }
+	} else { /* not img */ }
 }, false);
 var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fixes lag and on keyup inputs
 function update() { //updates text
