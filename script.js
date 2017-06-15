@@ -59,7 +59,6 @@ function rotate() { // handles rotation on click
 		canvas.height = width;
 	}
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-	ctx.rotate(-r);
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
