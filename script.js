@@ -1,8 +1,7 @@
-var d = function(i) { return document.querySelector(i)}, img, canvas = d('canvas');
+var d = function(i) { return document.querySelector(i) }, img, canvas = d('canvas');
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
-	var url = this.value,
-		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
+	var url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
@@ -29,17 +28,10 @@ d('[type=file]').addEventListener("change", function(event) {
 			canvas.style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
-	} else {
-		// not img
-	}
+	} else { // not img }
 }, false);
-var ut;
-function text() { 
-	clearTimeout(ut);
-	ut = setTimeout(update, 500);
-}
-function update() {
-	// handles the text side of the meme
+var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fixes lag and on keyup inputs
+function update() { //updates text
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
@@ -48,25 +40,22 @@ function update() {
 		d('[type=file]').dispatchEvent(evt);
 	} else d('[type=file]').fireEvent("onchange");
 }
-function rotate(degrees) { // handles rotation
-	    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-	    // save the unrotated context of the canvas so we can restore it later
-	    // the alternative is to untranslate & unrotate after drawing
-
-	    // move to the center of the canvas
-	    // rotate the canvas to the specified degrees
-	    ctx.rotate(1.5708);
-	    ctx.translate(canvas.width/2, canvas.height/2);
-	
-		var url = d('[type=file]').value,
+function rotate() { // handles rotation on click
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	// save the unrotated context of the canvas so we can restore it later
+	// the alternative is to untranslate & unrotate after drawing
+	// move to the center of the canvas
+	// rotate the canvas to the specified degrees
+	ctx.rotate(1.5708);
+	ctx.translate(canvas.width / 2, canvas.height / 2);
+	var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				ctx.drawImage(img,0,0);
+				ctx.drawImage(img, 0, 0);
 			}
 			img.src = e.target.result;
 		};
@@ -77,9 +66,7 @@ function rotate(degrees) { // handles rotation
 		evt.initEvent("change", false, true);
 		d('[type=file]').dispatchEvent(evt);
 	} else d('[type=file]').fireEvent("onchange");
-	    // draw the image
-	    // since the context is rotated, the image will be rotated also
-	    
-
-	    // we’re done with the rotating so restore the unrotated context
-}	
+	// draw the image
+	// since the context is rotated, the image will be rotated also
+	// we’re done with the rotating so restore the unrotated context
+}
