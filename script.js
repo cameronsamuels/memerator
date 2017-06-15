@@ -31,7 +31,7 @@ d('[type=file]').addEventListener("change", function(event) {
 // 				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
 			}
 			img.src = e.target.result;
-			d('canvas').style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
+			canvas.style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
 	} else {
@@ -45,6 +45,7 @@ function text() {
 }
 function update() {
 	// handles the text side of the meme
+	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
