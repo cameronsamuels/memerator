@@ -30,12 +30,12 @@ var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fix
 function update() { //updates text
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(r);
 	if (r%1.5708 == 1) {
 		canvas.width = img.height;
 		canvas.height = img.width;
 	}
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.rotate(r);
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 	ctx.rotate(0);
@@ -49,13 +49,13 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(1.5708);
+	r += 1.5708;
 	if (r%1.5708 == 1) {
 		canvas.width = img.height;
 		canvas.height = img.width;
 	}
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.rotate(1.5708);
-	r += 1.5708;
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 	ctx.rotate(0);
