@@ -50,7 +50,7 @@ canvas {
 	margin: auto;
 	margin-top: 15px;
 	padding: 0;
-	display: block;
+	display: block !important;
 }
 form p {
 	margin: 5px;
