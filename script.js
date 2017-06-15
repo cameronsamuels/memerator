@@ -67,6 +67,5 @@ function rotate() {
 	    // we’re done with the rotating so restore the unrotated context
 	    context.restore();
 }	
-}
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
