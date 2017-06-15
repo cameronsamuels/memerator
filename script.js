@@ -31,6 +31,7 @@ d('[type=file]').addEventListener("change", function(event) {
 // 				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
 			}
 			img.src = e.target.result;
+			d('canvas').style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
 	} else {
