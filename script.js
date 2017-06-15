@@ -81,7 +81,8 @@ $('[type=file]').addEventListener("change", function(event) {
 				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-
+				$('a').style.display = 'block';
+				$('a').href = canvas.toDataURL();
 			}
 			img.src = e.target.result;
 		};
@@ -100,10 +101,7 @@ function text(event) {
 		evt.initEvent("change", false, true);
 		$('[type=file]').dispatchEvent(evt);
 	} else $('[type=file]').fireEvent("onchange");
-// 	setTimeout(function() {
-		// 	}, 1000);
-	$('a').style.display = 'block';
-	$('a').href = canvas.toDataURL();
+	
 }
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
