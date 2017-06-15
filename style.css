@@ -26,7 +26,7 @@ form div:not(.row):not(.row div) {
 	max-width: 40%;
 	overflow: hidden;
 	position: relative;
-	margin: 5px;
+	margin: 15px;
 }
 form div:not([class]) {
 	display: block;	
