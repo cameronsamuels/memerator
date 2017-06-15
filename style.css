@@ -44,7 +44,7 @@ form a {
 form div [type=file] {
 	cursor: pointer;
 }
-form div:second-child {
+form div:nth-child(2) {
 	display: none !important;
 }
 canvas {
