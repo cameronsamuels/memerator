@@ -36,6 +36,7 @@ function update() { //updates text
         ctx.rotate(r);
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img,0,0);
+	ctx.rotate(0);
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -49,6 +50,7 @@ function rotate() { // handles rotation on click
 	r += 1.5708;
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img,0,0);
+	ctx.rotate(0);
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
