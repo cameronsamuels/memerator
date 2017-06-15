@@ -1,4 +1,4 @@
-User-agent: *
+User-Agent: *
 Disallow: memerator/script.js
 Disallow: memerator/style.css
 Allow: memerator/robots.txt
