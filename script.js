@@ -54,6 +54,7 @@ function rotate() { // handles rotation on click
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	d('a').href = canvas.toDataURL();
+	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	// draw the image
 	// since the context is rotated, the image will be rotated also
 	// we’re done with the rotating so restore the unrotated context
