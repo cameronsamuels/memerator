@@ -72,7 +72,7 @@ $('[type=file]').addEventListener("change", function(event) {
 				canvas.width = img.width;
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-				ctx.font = (canvas.height / 8) + "px impact";
+				ctx.font = (canvas.height / 8) + "px impac";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
 				ctx.shadowColor = "black";
