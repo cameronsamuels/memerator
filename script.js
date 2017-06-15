@@ -23,8 +23,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				d('a').href = canvas.toDataURL();
-// 				document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
-// 				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
+				$('.row').css('visibility', 'visible');
 			}
 			img.src = e.target.result;
 			canvas.style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
