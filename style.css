@@ -5,6 +5,7 @@ html, body {
 	user-select: none;
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
+	background: #eee;
 }
 form {
 	width: 100%;
