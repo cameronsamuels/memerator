@@ -38,6 +38,8 @@ form div {
 }
 a {
 	display: none;
+	text-decoration: none;
+	color: #000;
 }
 form div [type=file] {
 	cursor: pointer;
