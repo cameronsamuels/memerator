@@ -1,13 +1,13 @@
-var $ = function(i) { return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
+var d = function(i) { return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
 canvas.width = 1024, canvas.height = 1024;
-$('[type=file]').addEventListener("change", function(event) {
-	var canvas = $('canvas'),
+d('[type=file]').addEventListener("change", function(event) {
+	var canvas = d('canvas'),
 		url = this.value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-	if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
-			var canvas = $("canvas"), ctx = canvas.getContext("2d");
+			var canvas = d("canvas"), ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
@@ -26,28 +26,28 @@ $('[type=file]').addEventListener("change", function(event) {
 				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-				$('a').style.display = 'block';
-				$('a').href = canvas.toDataURL();
+				d('a').style.display = 'block';
+				d('a').href = canvas.toDataURL();
 			}
 			img.src = e.target.result;
 		};
-		reader.readAsDataURL($('[type=file]').files[0]);
+		reader.readAsDataURL(d('[type=file]').files[0]);
 	} else {
 		//not img
 	}
 }, false);
 function text(event) {
-	var canvas = $('canvas'),
+	var canvas = d('canvas'),
 		ctx = canvas.getContext("2d");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
 		evt.initEvent("change", false, true);
-		$('[type=file]').dispatchEvent(evt);
-	} else $('[type=file]').fireEvent("onchange");
+		d('[type=file]').dispatchEvent(evt);
+	} else d('[type=file]').fireEvent("onchange");
 }
 function rotate(degrees) {
-	var canvas = $('canvas'), context = canvas.getContext("2d");
+	var canvas = d('canvas'), context = canvas.getContext("2d");
 	    context.clearRect(0,0,canvas.width,canvas.height);
 
 	    // save the unrotated context of the canvas so we can restore it later
@@ -59,9 +59,9 @@ function rotate(degrees) {
 	    context.rotate(1.5708);
 	context.translate(-canvas.width/2, -canvas.height/2);
 	
-		var url = $('[type=file]').value,
+		var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-	if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
 			img = new Image();
@@ -70,7 +70,7 @@ function rotate(degrees) {
 			}
 			img.src = e.target.result;
 		};
-		reader.readAsDataURL($('[type=file]').files[0]);
+		reader.readAsDataURL(d('[type=file]').files[0]);
 	}
 	    // draw the image
 	    // since the context is rotated, the image will be rotated also
