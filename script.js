@@ -54,7 +54,7 @@ function rotate(degrees) {
 	    // the alternative is to untranslate & unrotate after drawing
 
 	    // move to the center of the canvas
-
+	    context.translate(canvas.width/2,canvas.height/2);
 	    // rotate the canvas to the specified degrees
 	    context.rotate(1.5708);
 	
