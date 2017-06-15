@@ -32,7 +32,7 @@ function update() { //updates text
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(r);
-	if (r%1.5708 == 1) {
+	if (r%1.5708 != 0) {
 		canvas.width = img.height;
 		canvas.height = img.width;
 	}
@@ -52,7 +52,7 @@ function rotate() { // handles rotation on click
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(1.5708);
 	r += 1.5708;
-	if (r%1.5708 == 1) {
+	if (r%1.5708 != 0) {
 		canvas.width = img.height;
 		canvas.height = img.width;
 	}
