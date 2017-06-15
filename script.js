@@ -8,6 +8,7 @@ d('[type=file]').addEventListener("change", function(event) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
 			var canvas = d("canvas"), ctx = canvas.getContext("2d");
+			var canvasback = d("backgroundCanvas"), ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
