@@ -72,6 +72,16 @@ $('[type=file]').addEventListener("change", function(event) {
 				canvas.width = img.width;
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+				ctx.font = (canvas.height / 8) + "px impact";
+				ctx.textAlign = "center";
+				ctx.lineWidth = canvas.height / 64;
+				ctx.fillStyle = "#fff";
+				ctx.strokeStyle = '#000';
+				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
+				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
+				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
+				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
+
 			}
 			img.src = e.target.result;
 		};
@@ -90,17 +100,8 @@ function text(event) {
 		evt.initEvent("change", false, true);
 		$('[type=file]').dispatchEvent(evt);
 	} else $('[type=file]').fireEvent("onchange");
-	setTimeout(function() {
-		ctx.font = (canvas.height / 8) + "px impact";
-		ctx.textAlign = "center";
-		ctx.lineWidth = canvas.height / 64;
-		ctx.fillStyle = "#fff";
-		ctx.strokeStyle = '#000';
-		ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-		ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-		ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-		ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-	}, 1000);
+// 	setTimeout(function() {
+		// 	}, 1000);
 	$('a').style.display = 'block';
 	$('a').href = canvas.toDataURL();
 }
