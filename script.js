@@ -75,6 +75,10 @@ $('[type=file]').addEventListener("change", function(event) {
 				ctx.font = (canvas.height / 8) + "px impact";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
+				ctx.shadowColor = "black";
+				ctx.shadowOffsetX = 1; 
+				ctx.shadowOffsetY = 2; 
+				ctx.shadowBlur = 1;
 				ctx.fillStyle = "#fff";
 				ctx.strokeStyle = '#000';
 				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
