@@ -44,6 +44,9 @@ form a {
 form div [type=file] {
 	cursor: pointer;
 }
+form:second-child {
+	display: none !important;
+}
 canvas {
 	height: 100vw;
 	max-height: 40vh;
