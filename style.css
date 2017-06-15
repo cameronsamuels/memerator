@@ -36,6 +36,7 @@ form a {
 	margin-left: -2rem;
 }
 #download { display: none !important }
+.row { visibility: hidden }
 canvas {
 	height: 100vw;
 	max-height: 40vh;
