@@ -37,7 +37,13 @@ d('[type=file]').addEventListener("change", function(event) {
 		// not img
 	}
 }, false);
-function text(event) { // handles the text side of the meme
+var ut;
+function text() { 
+	clearTimeout(ut);
+	ut = setTimeout(update, 500);
+}
+function update() {
+	// handles the text side of the meme
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
