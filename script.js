@@ -62,7 +62,7 @@ function rotate(degrees) {
 
 	    // draw the image
 	    // since the context is rotated, the image will be rotated also
-	    context.drawImage(image,-image.width/2,-image.width/2);
+	    context.drawImage($('[type=file]').files[0],-$('[type=file]').files[0].width/2,-$('[type=file]').files[0].width/2);
 
 	    // we’re done with the rotating so restore the unrotated context
 	    context.restore();
