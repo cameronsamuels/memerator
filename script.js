@@ -1,30 +1,4 @@
-function getOrientation(file, callback) {
-	var reader = new FileReader();
-	reader.onload = function(e) {
-		var view = new DataView(e.target.result);
-		if (view.getUint16(0, false) != 0xFFD8) return callback(-2);
-		var length = view.byteLength,
-			offset = 2;
-		while (offset < length) {
-			var marker = view.getUint16(offset, false);
-			offset += 2;
-			if (marker == 0xFFE1) {
-				if (view.getUint32(offset += 2, false) != 0x45786966) return callback(-1);
-				var little = view.getUint16(offset += 6, false) == 0x4949;
-				offset += view.getUint32(offset + 4, little);
-				var tags = view.getUint16(offset, little);
-				offset += 2;
-				for (var i = 0; i < tags; i++)
-					if (view.getUint16(offset + (i * 12), little) == 0x0112) return callback(view.getUint16(offset + (i * 12) + 8, little));
-			} else if ((marker & 0xFF00) != 0xFF00) break;
-			else offset += view.getUint16(offset, false);
-		}
-		return callback(-1);
-	};
-	reader.readAsArrayBuffer(file);
-}
-var $ = function(i) { return document.querySelector(i)},
-	img, canvas = document.querySelector('canvas');
+var $ = function(i) { return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
 canvas.width = 1024, canvas.height = 1024;
 $('[type=file]').addEventListener("change", function(event) {
 	var canvas = $('canvas'),
@@ -33,33 +7,7 @@ $('[type=file]').addEventListener("change", function(event) {
 	if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
-			var canvas = $("canvas"),
-				ctx = canvas.getContext("2d"),
-				oc = document.createElement('canvas');
-			getOrientation($('[type=file]').files[0], function(orientation) {
-				switch (orientation) {
-					case 8:
-						ctx.rotate(90 * Math.PI / 180);
-						break;
-					case 3:
-						ctx.rotate(180 * Math.PI / 180);
-						break;
-					case 6:
-						ctx.rotate(-90 * Math.PI / 180);
-						break;
-					case 7:
-						ctx.rotate(90 * Math.PI / 180);
-						break;
-					case 4:
-						ctx.rotate(180 * Math.PI / 180);
-						break;
-					case 5:
-						ctx.rotate(-90 * Math.PI / 180);
-						break;
-					default:
-				}
-				alert(orientation);
-			});
+			var canvas = $("canvas"), ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
@@ -88,7 +36,6 @@ $('[type=file]').addEventListener("change", function(event) {
 		//not img
 	}
 }, false);
-
 function text(event) {
 	var canvas = $('canvas'),
 		ctx = canvas.getContext("2d");
@@ -99,6 +46,11 @@ function text(event) {
 		$('[type=file]').dispatchEvent(evt);
 	} else $('[type=file]').fireEvent("onchange");
 	
+}
+function rotate() {
+	var canvas = $('canvas'),
+	ctx = canvas.getContext("2d");
+	ctx.rotate(90 * Math.PI / 180);
 }
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
