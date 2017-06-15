@@ -67,7 +67,7 @@ function rotate(degrees) {
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				context.drawImage(,-$('[type=file]').files[0].width/2,-$('[type=file]').files[0].width/2);
+				context.drawImage(img,-img.width/2,-img.width/2);
 			}
 			img.src = e.target.result;
 		};
