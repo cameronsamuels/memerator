@@ -46,7 +46,7 @@ function text(event) {
 		$('[type=file]').dispatchEvent(evt);
 	} else $('[type=file]').fireEvent("onchange");
 }
-function rotate() {
+function rotate(degrees) {
 	var canvas = $('canvas'), context = canvas.getContext("2d");
 	    context.clearRect(0,0,canvas.width,canvas.height);
 
