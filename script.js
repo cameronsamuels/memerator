@@ -105,4 +105,3 @@ function text(event) {
 }
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
-document.ontouchmove=function(e){e.preventDefault()};
