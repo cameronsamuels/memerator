@@ -59,10 +59,23 @@ function rotate(degrees) {
 
 	    // rotate the canvas to the specified degrees
 	    context.rotate(degrees*Math.PI/180);
-
+	
+		var url = $('[type=file]').value,
+		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+	if ($('input').files && $('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+		var reader = new FileReader();
+		reader.onloadend = function(e) {
+			img = new Image();
+			img.onload = function() {
+				context.drawImage(,-$('[type=file]').files[0].width/2,-$('[type=file]').files[0].width/2);
+			}
+			img.src = e.target.result;
+		};
+		reader.readAsDataURL($('[type=file]').files[0]);
+	
 	    // draw the image
 	    // since the context is rotated, the image will be rotated also
-	    context.drawImage($('[type=file]').files[0],-$('[type=file]').files[0].width/2,-$('[type=file]').files[0].width/2);
+	    
 
 	    // we’re done with the rotating so restore the unrotated context
 	    context.restore();
