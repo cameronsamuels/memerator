@@ -33,7 +33,8 @@ function update() { //updates text
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(r);
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
-	if (r%1.5708 != 0) {
+	rad = r;
+	if (rad%1.5708 != 0) {
 		var width = canvas.width;
 		canvas.width = canvas.height;
 		canvas.height = width;
@@ -53,7 +54,8 @@ function rotate() { // handles rotation on click
         ctx.rotate(1.5708);
 	r += 1.5708;
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
-	if (r%1.5708 != 0) {
+	rad = r;
+	if (rad%1.5708 != 0) {
 		var width = canvas.width;
 		canvas.width = canvas.height;
 		canvas.height = width;
