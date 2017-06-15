@@ -42,7 +42,7 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.save();
+//         ctx.save();
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.rotate(1.5708);
 	var url = d('[type=file]').value,
@@ -53,7 +53,7 @@ function rotate() { // handles rotation on click
 			img = new Image();
 			img.onload = function() {
 				ctx.drawImage(img,-img.width/2,-img.width/2);
-				ctx.restore();
+// 				ctx.restore();
 			}
 			img.src = e.target.result;
 		};
