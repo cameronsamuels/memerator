@@ -43,7 +43,7 @@ function update() { //updates text
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.rotate(Math.PI);
+        ctx.rotate(1.57);
         ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	ctx.drawImage(img,0,0);
 	
