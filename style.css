@@ -33,6 +33,10 @@ form div, a {
 	line-height: 50px;
 	vertical-align: middle;
 }
+form {
+	width: 100%;
+	max-width: 300px;
+}
 form div {
 	display: block;	
 }
