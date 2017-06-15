@@ -13,7 +13,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.width = img.width;
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-				d("form").innerHTML = '<div id="upload" class="waves-effect waves-light btn">Upload<input type="file" /></div><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" onkeyup="text()" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input onkeyup="text()" type="text" placeholder="memes with memerator" />';
+				d("#after").innerHTML = '<a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" onkeyup="text()" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input onkeyup="text()" type="text" placeholder="memes with memerator" />';
 				ctx.font = (canvas.height / 8) + "px impac";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
