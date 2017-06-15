@@ -13,6 +13,8 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.width = img.width;
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+				d('a').style.visibility = 'visible';
+				d("form").innerHTML = '<div id="upload" class="waves-effect waves-light btn">Upload<input type="file" /></div><a download="meme.png" class="waves-effect waves-light btn">Download</a><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
 				ctx.font = (canvas.height / 8) + "px impac";
 				ctx.textAlign = "center";
 				ctx.lineWidth = canvas.height / 64;
@@ -26,8 +28,6 @@ d('[type=file]').addEventListener("change", function(event) {
 				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 				ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-				d('a').style.visibility = 'visible';
-				d("form").innerHTML = '<div id="upload" class="waves-effect waves-light btn">Upload<input type="file" /></div><a download="meme.png" class="waves-effect waves-light btn">Download</a><a download="meme.png" class="waves-effect waves-light btn">Download</a><p>Top text:</p><input type="text" placeholder="One can simply make" /><p></p><p>Bottom text:</p><input type="text" placeholder="memes with memerator" />';
 				d('a').href = canvas.toDataURL();
 				document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 				document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
