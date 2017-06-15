@@ -42,9 +42,15 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-//         ctx.save();
-        ctx.translate(canvas.width/2,canvas.height/2);
-        ctx.rotate(1.5708);
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(Math.PI);
+        ctx.translate(-canvas.width / 2, -canvas.height / 2);
+	ctx.drawImage(img,0,0);
+	
+        var newImage = new Image();
+        newImage.src = canvas.toDataURL("image/png");
+        return newImage;
+	
 	var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
@@ -52,8 +58,6 @@ function rotate() { // handles rotation on click
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				ctx.drawImage(img,-img.width/2,-img.width/2);
-// 				ctx.restore();
 			}
 			img.src = e.target.result;
 		};
