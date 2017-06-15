@@ -36,37 +36,29 @@ $('[type=file]').addEventListener("change", function(event) {
 			var canvas = $("canvas"),
 				ctx = canvas.getContext("2d"),
 				oc = document.createElement('canvas'),
-				octx = oc.getContext('2d');
 			getOrientation($('[type=file]').files[0], function(orientation) {
 				switch (orientation) {
 					case 8:
 						ctx.rotate(90 * Math.PI / 180);
-						octx.rotate(90 * Math.PI / 180);
 						break;
 					case 3:
 						ctx.rotate(180 * Math.PI / 180);
-						octx.rotate(180 * Math.PI / 180);
 						break;
 					case 6:
 						ctx.rotate(-90 * Math.PI / 180);
-						octx.rotate(-90 * Math.PI / 180);
 						break;
 					case 7:
 						ctx.rotate(90 * Math.PI / 180);
-						octx.rotate(90 * Math.PI / 180);
 						break;
 					case 4:
 						ctx.rotate(180 * Math.PI / 180);
-						octx.rotate(180 * Math.PI / 180);
 						break;
 					case 5:
 						ctx.rotate(-90 * Math.PI / 180);
-						octx.rotate(-90 * Math.PI / 180);
 						break;
 					default:
 				}
 			});
-			// 						var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
