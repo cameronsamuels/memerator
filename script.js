@@ -1,13 +1,11 @@
-var d = function(i) { return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
-canvas.width = 1024, canvas.height = 1024; // canvas dimensions
+var d = function(i) { return document.querySelector(i)}, img, canvas = d('canvas');
+canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
-	var canvas = d('canvas'),
-		url = this.value,
+	var url = this.value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
-			var canvas = d("canvas"), ctx = canvas.getContext("2d");
 			img = new Image();
 			img.onload = function() {
 				canvas.width = img.width;
@@ -39,8 +37,6 @@ d('[type=file]').addEventListener("change", function(event) {
 	}
 }, false);
 function text(event) { // handles the text side of the meme
-	var canvas = d('canvas'),
-		ctx = canvas.getContext("2d");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
@@ -49,17 +45,16 @@ function text(event) { // handles the text side of the meme
 	} else d('[type=file]').fireEvent("onchange");
 }
 function rotate(degrees) { // handles rotation
-	var canvas = d('canvas'), context = canvas.getContext("2d");
-	    context.clearRect(0,0,canvas.width,canvas.height);
+	    ctx.clearRect(0,0,canvas.width,canvas.height);
 
 	    // save the unrotated context of the canvas so we can restore it later
 	    // the alternative is to untranslate & unrotate after drawing
 
 	    // move to the center of the canvas
-	    context.translate(canvas.width/2,canvas.height/2);
+	    ctx.translate(canvas.width/2,canvas.height/2);
 	    // rotate the canvas to the specified degrees
-	    context.rotate(1.5708);
-	context.translate(-canvas.width/2, -canvas.height/2);
+	    ctx.rotate(1.5708);
+	ctx.translate(-canvas.width/2, -canvas.height/2);
 	
 		var url = d('[type=file]').value,
 		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
@@ -68,7 +63,7 @@ function rotate(degrees) { // handles rotation
 		reader.onloadend = function(e) {
 			img = new Image();
 			img.onload = function() {
-				context.drawImage(img,0,0);
+				ctx.drawImage(img,0,0);
 			}
 			img.src = e.target.result;
 		};
