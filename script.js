@@ -52,10 +52,8 @@ function rotate(degrees) {
 
 	    // save the unrotated context of the canvas so we can restore it later
 	    // the alternative is to untranslate & unrotate after drawing
-	    context.save();
 
 	    // move to the center of the canvas
-	    context.translate(canvas.width/2,canvas.height/2);
 
 	    // rotate the canvas to the specified degrees
 	    context.rotate(1.5708);
@@ -78,7 +76,6 @@ function rotate(degrees) {
 	    
 
 	    // we’re done with the rotating so restore the unrotated context
-	    context.restore();
 }	
 document.querySelectorAll('[type=text]')[0].addEventListener("keyup", text, false);
 document.querySelectorAll('[type=text]')[1].addEventListener("keyup", text, false);
