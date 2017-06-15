@@ -1,9 +1,9 @@
 var d = function(i) { return document.querySelector(i)}, img, canvas = document.querySelector('canvas');
-canvas.width = 1024, canvas.height = 1024;
+canvas.width = 1024, canvas.height = 1024; // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
 	var canvas = d('canvas'),
 		url = this.value,
-		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
@@ -33,10 +33,10 @@ d('[type=file]').addEventListener("change", function(event) {
 		};
 		reader.readAsDataURL(d('[type=file]').files[0]);
 	} else {
-		//not img
+		// not img
 	}
 }, false);
-function text(event) {
+function text(event) { // handles the text side of the meme
 	var canvas = d('canvas'),
 		ctx = canvas.getContext("2d");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -46,7 +46,7 @@ function text(event) {
 		d('[type=file]').dispatchEvent(evt);
 	} else d('[type=file]').fireEvent("onchange");
 }
-function rotate(degrees) {
+function rotate(degrees) { // handles rotation
 	var canvas = d('canvas'), context = canvas.getContext("2d");
 	    context.clearRect(0,0,canvas.width,canvas.height);
 
@@ -60,7 +60,7 @@ function rotate(degrees) {
 	context.translate(-canvas.width/2, -canvas.height/2);
 	
 		var url = d('[type=file]').value,
-		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+		ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // same as before
 	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
