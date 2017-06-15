@@ -58,6 +58,7 @@ $('[type=file]').addEventListener("change", function(event) {
 						break;
 					default:
 				}
+				alert(orientation);
 			});
 			img = new Image();
 			img.onload = function() {
