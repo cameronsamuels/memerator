@@ -72,7 +72,7 @@ function rotate(degrees) {
 			img.src = e.target.result;
 		};
 		reader.readAsDataURL($('[type=file]').files[0]);
-	
+	}
 	    // draw the image
 	    // since the context is rotated, the image will be rotated also
 	    
