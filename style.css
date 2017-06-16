@@ -51,6 +51,7 @@ form ul *:not(ul div) {
 }
 #download, #advanced { display: none !important }
 .row { visibility: hidden }
+.dropdown-content { text-align: center !important }
 canvas {
 	height: 100vw;
 	max-height: 40vh;
