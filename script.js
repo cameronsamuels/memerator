@@ -12,6 +12,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d('#download').id = '';
 				d('#advanced').id = '';
+				color = $('.jscolor').css('background-color');
 				ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 				ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -36,6 +37,7 @@ function update() { //updates text
 	ctx.drawImage(img, -img.width / 2, -img.height / 2);
 	ctx.rotate(-r);
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
+	color = $('.jscolor').css('background-color');
 	ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -69,6 +71,7 @@ function rotate() { // handles rotation on click
 	ctx.rotate(-r);
 	// un-translate the canvas back to origin==top-left canvas
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
+	color = $('.jscolor').css('background-color');
 	ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
