@@ -58,6 +58,7 @@ function update() { //updates text
 	d('a').href = canvas.toDataURL();
 }
 function rotate() { // handles rotation on click
+	if ($('input[type=text]').css('visibility')=='hidden') return;
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 // 	r += 1.5708;
 	rt = rt==1?0:1;
