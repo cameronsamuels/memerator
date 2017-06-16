@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head><body><canvas onclick="rotate()"></canvas><center>
+</head><body><canvas></canvas><center>
 <form class="col s12"><div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
 "image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
 <div class="waves-effect waves-light btn" id="download"><a download="meme.png">Download</a></div>
@@ -17,6 +17,9 @@
 </div></div><div class="row"><div class="input-field col s12">
 <input id="bottom" type="text" class="validate" onkeyup="text()"><label for="bottom">Bottom text</label></div></div>
 <ul class="collapsible" data-collapsible="advanced" id="advanced">
+  <li>
+    <div onclick="rotate()" class="waves-effect waves-light btn"><i class="material-icons">replay</i></div>
+  </li>
   <li>
     <div class="collapsible-header">Advanced settings</div>
     <div class="collapsible-body">
