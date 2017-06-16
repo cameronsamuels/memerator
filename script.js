@@ -51,7 +51,7 @@ function update() { //updates text
 	    return text.replace('<i class="material-icons">done</i>', "");
 	});
 	$('a[onclick*=\'"' + font + '"\']').html("<i class='material-icons'>done</i>"+$('a[onclick*=\'"' + font + '"\']').html());
-	$('#font').css('font-family', font + ' !important');
+	$('#font').css('font-family', font);
 }
 function rotate() { // handles rotation on click
 	if ($('input[type=text]').css('visibility')=='hidden') return;
