@@ -49,7 +49,7 @@ form ul *:not(ul div) {
 .collapsible-body {
 	padding: 2px !important;	
 }
-#download, #font { display: none !important }
+#download, #advanced { display: none !important }
 .row { visibility: hidden }
 canvas {
 	height: 100vw;
