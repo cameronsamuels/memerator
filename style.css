@@ -40,8 +40,7 @@ canvas {
 	height: 100vw;
 	max-height: 40vh;
 	margin: auto;
-	margin-top: 15px;
-	padding: 0;
+	margin-top: 10px;
 	display: block !important;
 	background: url(meme.png) no-repeat 100%/cover;
 }
