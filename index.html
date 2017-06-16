@@ -7,6 +7,7 @@
 <link href="style.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head><body><canvas onclick="rotate()"></canvas><center>
 <form class="col s12"><div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
 "image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
@@ -21,12 +22,10 @@
     <div class="collapsible-body">
       <a class='dropdown-button btn' id="font" href='#' data-activates='fontDropDown'>Font</a>
       <ul id='fontDropDown' class='dropdown-content'>
-        <li><a onclick="font='impac';update();$('.dropdown-button').html('Impact')">Impact</a></li>
-        <li><a onclick="font='arial';update();$('.dropdown-button').html('Arial')">Arial</a></li>
-        <li><a onclick="font='georgia';update();$('.dropdown-button').html('Georgia')">Georgia</a></li>
-        <li><a onclick="font='monospace';update();$('.dropdown-button').html('Mono')">Mono</a></li>
-        <li><a onclick="font='sans-serif';update();$('.dropdown-button').html('Sans')">Sans</a></li>
-        <li><a onclick="font='serif';update();$('.dropdown-button').html('Serif')">Serif</a></li>
+        <li><a onclick="font='impac';update();$(this).html('<i class=\"material-icons\">done</i>'+$(this).html())">Default</a></li>
+        <li><a onclick="font='monospace';update();$(this).html('<i class=\"material-icons\">done</i>'+$(this).html())">Mono</a></li>
+        <li><a onclick="font='sans-serif';update();$(this).html('<i class=\"material-icons\">done</i>'+$(this).html())">Sans</a></li>
+        <li><a onclick="font='serif';update();$(this).html('<i class=\"material-icons\">done</i>'+$(this).html())">Serif</a></li>
       </ul>
     </div>
   </li>
