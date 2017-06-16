@@ -22,13 +22,13 @@ form div [type=file] {
 	left: 0;
 	cursor: inherit;
 }
-form div:not(.row):not(.row div) {
+form div:not(.row):not(.row div):not(ul div) {
 	max-width: 40%;
 	overflow: hidden;
 	position: relative;
 	margin: 15px;
 }
-form a:not(li a) {
+form a:not(ul a) {
 	text-decoration: none;
 	width: calc(100% + 4rem);
 	height: 100%;
