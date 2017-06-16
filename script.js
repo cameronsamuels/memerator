@@ -1,4 +1,4 @@
-var d = function(i) { return document.querySelector(i) }, img, canvas = d('canvas'), r = 0, rt = 0, font = "impac";
+var d = function(i) { return document.querySelector(i) }, img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#000";
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
 	var url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
@@ -12,7 +12,7 @@ d('[type=file]').addEventListener("change", function(event) {
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 				d('#download').id = '';
 				d('#advanced').id = '';
-				ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
+				ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 				ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 				ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
@@ -36,7 +36,7 @@ function update() { //updates text
 	ctx.drawImage(img, -img.width / 2, -img.height / 2);
 	ctx.rotate(-r);
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
-	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
+	ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
@@ -69,7 +69,7 @@ function rotate() { // handles rotation on click
 	ctx.rotate(-r);
 	// un-translate the canvas back to origin==top-left canvas
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
-	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
+	ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 	ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
