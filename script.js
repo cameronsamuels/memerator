@@ -57,23 +57,27 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	r += 1.5708;
+// 	r += 1.5708;
+	
+	// translate to center-canvas 
+    	// the origin [0,0] is now center-canvas
+    	ctx.translate(canvas.width / 2, canvas.height / 2);
 	
 	// roate the canvas by +90% (==Math.PI/2)
-	ctx.rotate(r);
+	ctx.rotate(1.5708);
 
 	// draw the signature
 	// since images draw from top-left offset the draw by 1/2 width & height
-	ctx.drawImage(img, -img.width, -img.height);
+	ctx.drawImage(img, -img.width / 2, -img.height / 2);
 
 	// un-rotate the canvas by -90% (== -Math.PI/2)
-	ctx.rotate(-r);
+	ctx.rotate(-1.5708);
 
 	// un-translate the canvas back to origin==top-left canvas
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
 
 	// testing...just draw a rect top-left
-	ctx.fillRect(0, 0, 25, 10);
+// 	ctx.fillRect(0, 0, 25, 10);
 
 	ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 	ctx.font = (canvas.height / 8) + "px impac", ctx.lineWidth = canvas.height / 64;
