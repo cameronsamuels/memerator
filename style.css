@@ -1,6 +1,6 @@
 @font-face{font-family:impac;src:url('impact.ttf') format("truetype")}
 html, body {
-	font-family: impact, impac, arial;
+	font-family: arial;
 	overflow: hidden;
 	user-select: none;
 	-webkit-user-select: none;
@@ -13,7 +13,6 @@ form {
 	margin: 10px;
 }
 form div [type=file] {
-	cursor: inherit;
 	display: block;
 	filter: alpha(opacity=0);
 	opacity: 0;
@@ -46,6 +45,4 @@ canvas {
 	display: block !important;
 	background: url(meme.png) no-repeat 100%/cover;
 }
-.row, input {
-	margin-bottom: 3px !important;	
-}
+.row, input { margin-bottom: 3px !important }
