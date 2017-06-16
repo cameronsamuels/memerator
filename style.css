@@ -46,7 +46,7 @@ form ul *:not(ul div) {
 	color: #9e9e9e !important;	
 }
 .collapsible-body {
-	padding 2px;	
+	padding 2px !important;	
 }
 #download, #font { display: none !important }
 .row { visibility: hidden }
