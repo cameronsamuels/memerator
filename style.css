@@ -58,4 +58,5 @@ body>canvas {
 	display: block !important;
 	background: url(meme.png) no-repeat 100%/cover;
 }
+@media screen and (orientation:portrait) { body>canvas{margin-top:0}}
 .row, input { margin-bottom: 3px !important }
