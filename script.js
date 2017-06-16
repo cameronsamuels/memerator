@@ -1,4 +1,4 @@
-var d = function(i) { return document.querySelector(i) }, img, canvas = d('canvas'), r = 0;
+var d = function(i) { return document.querySelector(i) }, img, canvas = d('canvas'), r = 0, rt = 0;
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
 	var url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
@@ -60,7 +60,15 @@ function update() { //updates text
 function rotate() { // handles rotation on click
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 // 	r += 1.5708;
-	
+	rt = rt==1?0:1;
+	if (rt == 1) {
+		canvas.width = img.height;
+		canvas.height = img.width;
+	}
+	else {
+		canvas.width = img.width;
+		canvas.height = img.height;
+	}
 	// translate to center-canvas 
     	// the origin [0,0] is now center-canvas
     	ctx.translate(canvas.width / 2, canvas.height / 2);
