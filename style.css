@@ -28,7 +28,7 @@ form div:not(.row):not(.row div):not(ul div) {
 	position: relative;
 	margin: 15px;
 }
-form a:not(ul a) {
+form a:not(li a) {
 	text-decoration: none;
 	width: calc(100% + 4rem);
 	height: 100%;
