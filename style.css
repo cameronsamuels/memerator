@@ -19,6 +19,7 @@ form div [type=file] {
 	height: 50px;
 	position: absolute;
 	top: 0;
+	cursor: inherit;
 }
 form div:not(.row):not(.row div) {
 	max-width: 40%;
