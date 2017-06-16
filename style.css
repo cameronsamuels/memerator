@@ -36,6 +36,10 @@ form a {
 	display: block;
 	margin-left: -2rem;
 }
+.dropdown-button {
+	max-width: 40%;
+	margin: 5px 0;
+}
 #download { display: none !important }
 .row { visibility: hidden }
 canvas {
