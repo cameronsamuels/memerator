@@ -9,6 +9,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head><body><canvas onclick="rotate()"></canvas><center>
   
+<form class="col s12"><div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
+"image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
+<div class="waves-effect waves-light btn" id="download"><a download="meme.png">Download</a></div>
+<div class="row"><div class="input-field col s12">
+<input id="top" type="text" class="validate" onkeyup="text()"><label for="top">Top text</label>
+</div></div><div class="row"><div class="input-field col s12">
+<input id="bottom" type="text" class="validate" onkeyup="text()"><label for="bottom">Bottom text</label></div></div>
 <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Font</a>
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
@@ -19,12 +26,4 @@
   <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
   <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 </ul>
-  
-<form class="col s12"><div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
-"image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
-<div class="waves-effect waves-light btn" id="download"><a download="meme.png">Download</a></div>
-<div class="row"><div class="input-field col s12">
-<input id="top" type="text" class="validate" onkeyup="text()"><label for="top">Top text</label>
-</div></div><div class="row"><div class="input-field col s12">
-<input id="bottom" type="text" class="validate" onkeyup="text()"><label for="bottom">Bottom text</label></div></div>
 </form></center><script src="script.js"></script></body></html>
