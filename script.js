@@ -44,6 +44,8 @@ function update() { //updates text
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	d('a').href = canvas.toDataURL();
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
+	$('.dropdown-content a').html($('.dropdown-content a').html().replace("<i class='material-icons'>done</i>", '');
+	$('a[onclick*="' + font + '"]').html("<i class='material-icons'>done</i>"+$('a[onclick*="' + font + '"]').html());
 }
 function rotate() { // handles rotation on click
 	if ($('input[type=text]').css('visibility')=='hidden') return;
