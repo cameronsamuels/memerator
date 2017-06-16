@@ -30,11 +30,13 @@ form div:not(.row):not(.row div) {
 }
 form a:not(li a) {
 	text-decoration: none;
-	color: #000 !important;
 	width: calc(100% + 4rem);
 	height: 100%;
 	display: block;
 	margin-left: -2rem;
+}
+a[download] {
+	color: #fff !important;
 }
 .dropdown-button {
 	max-width: 40%;
