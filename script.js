@@ -2,7 +2,7 @@ var d = function(i) { return document.querySelector(i) }, img, canvas = d('canva
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
 	var url = this.value, ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
-	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+	if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg" || ext == "tiff" || ext == "bmp")) {
 		var reader = new FileReader();
 		reader.onloadend = function(e) {
 			img = new Image();
