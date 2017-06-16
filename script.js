@@ -48,7 +48,7 @@ function update() { //updates text
 	$(".dropdown-content a").html(function(index, text) {
 	    return text.replace('<i class="material-icons">done</i>', "");
 	});
-	$('a[onclick*="\'' + font + '\'"]').html("<i class='material-icons'>done</i>"+$('a[onclick*="\'' + font + '\'"]').html());
+	$('a[onclick*=\'"' + font + '"\']').html("<i class='material-icons'>done</i>"+$('a[onclick*=\'"' + font + '"\'"]').html());
 }
 function rotate() { // handles rotation on click
 	if ($('input[type=text]').css('visibility')=='hidden') return;
