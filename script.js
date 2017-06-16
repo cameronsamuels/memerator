@@ -62,7 +62,7 @@ function rotate() { // handles rotation on click
     	// the origin [0,0] is now center-canvas
     	ctx.translate(canvas.width / 2, canvas.height / 2);
 	// roate the canvas by +90% (==Math.PI/2)
-	r += 1.5708;
+	r -= 1.5708;
 	ctx.rotate(r);
 	// draw the signature
 	// since images draw from top-left offset the draw by 1/2 width & height
