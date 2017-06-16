@@ -19,6 +19,7 @@ form div [type=file] {
 	height: 50px;
 	position: absolute;
 	top: 0;
+	left: 0;
 	cursor: inherit;
 }
 form div:not(.row):not(.row div) {
