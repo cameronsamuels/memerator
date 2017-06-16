@@ -10,7 +10,8 @@ d('[type=file]').addEventListener("change", function(event) {
 				canvas.width = img.width;
 				canvas.height = img.height;
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-				d('form div:nth-child(2)').id = '';
+				d('#download').id = '';
+				d('#font').id = '';
 				ctx.textAlign = "center", ctx.fillStyle = "#fff", ctx.strokeStyle = '#000',
 				ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
 				ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
