@@ -49,6 +49,7 @@ form ul *:not(ul div) {
 .collapsible-body {
 	padding: 2px !important;	
 }
+.material-icons { margin-right: 0 !important }
 #download, #advanced { display: none !important }
 .row { visibility: hidden }
 .dropdown-content li { text-align: center !important }
