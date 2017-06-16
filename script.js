@@ -96,3 +96,4 @@ function rotate() { // handles rotation on click
 	d('a').href = canvas.toDataURL();
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 }
+$('input[type=text]').first().keypress(function(e){if(e.which==13)$(document).children('input[type=text]').eq(1).focus()});
