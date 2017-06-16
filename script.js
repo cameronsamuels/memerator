@@ -29,7 +29,6 @@ d('[type=file]').addEventListener("change", function(event) {
 }, false);
 var ut; function text() { clearTimeout(ut); ut = setTimeout(update, 500) } //fixes lag and on keyup inputs
 function update() { //updates text
-	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
     	ctx.translate(canvas.width / 2, canvas.height / 2);
 	ctx.rotate(r);
@@ -43,6 +42,7 @@ function update() { //updates text
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	d('a').href = canvas.toDataURL();
+	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 }
 function rotate() { // handles rotation on click
 	if ($('input[type=text]').css('visibility')=='hidden') return;
