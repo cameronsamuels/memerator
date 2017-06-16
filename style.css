@@ -42,7 +42,7 @@ a[download] {
 	max-width: 45%;
 	margin: 5px 0;
 }
-form ul {
+form ul *:not(ul div) {
 	color: #9e9e9e !important;	
 }
 #download, #font { display: none !important }
