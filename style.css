@@ -40,7 +40,7 @@ form a {
 	max-width: 40%;
 	margin: 5px 0;
 }
-#download { display: none !important }
+#download, #font { display: none !important }
 .row { visibility: hidden }
 canvas {
 	height: 100vw;
