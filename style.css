@@ -40,6 +40,7 @@ a[download] {
 }
 .dropdown-button {
 	max-width: 45%;
+	width: 46% !important;
 	margin: 5px 0;
 }
 form ul *:not(ul div) {
