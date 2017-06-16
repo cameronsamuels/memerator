@@ -15,13 +15,21 @@
 <input id="top" type="text" class="validate" onkeyup="text()"><label for="top">Top text</label>
 </div></div><div class="row"><div class="input-field col s12">
 <input id="bottom" type="text" class="validate" onkeyup="text()"><label for="bottom">Bottom text</label></div></div>
-<a class='dropdown-button btn' id="font" href='#' data-activates='fontDropDown'>Font</a>
-<ul id='fontDropDown' class='dropdown-content'>
-  <li><a onclick="font='impac';update();$('.dropdown-button').html('Impact')">Impact</a></li>
-  <li><a onclick="font='arial';update();$('.dropdown-button').html('Arial')">Arial</a></li>
-  <li><a onclick="font='georgia';update();$('.dropdown-button').html('Georgia')">Georgia</a></li>
-  <li><a onclick="font='monospace';update();$('.dropdown-button').html('Mono')">Mono</a></li>
-  <li><a onclick="font='sans-serif';update();$('.dropdown-button').html('Sans')">Sans</a></li>
-  <li><a onclick="font='serif';update();$('.dropdown-button').html('Serif')">Serif</a></li>
+<div class="collapsible-header active">Advanced Features</div>
+<ul class="collapsible" data-collapsible="advanced">
+  <li>
+    <div class="collapsible-header">Advanced settings</div>
+    <div class="collapsible-body">
+      <a class='dropdown-button btn' id="font" href='#' data-activates='fontDropDown'>Font</a>
+      <ul id='fontDropDown' class='dropdown-content'>
+        <li><a onclick="font='impac';update();$('.dropdown-button').html('Impact')">Impact</a></li>
+        <li><a onclick="font='arial';update();$('.dropdown-button').html('Arial')">Arial</a></li>
+        <li><a onclick="font='georgia';update();$('.dropdown-button').html('Georgia')">Georgia</a></li>
+        <li><a onclick="font='monospace';update();$('.dropdown-button').html('Mono')">Mono</a></li>
+        <li><a onclick="font='sans-serif';update();$('.dropdown-button').html('Sans')">Sans</a></li>
+        <li><a onclick="font='serif';update();$('.dropdown-button').html('Serif')">Serif</a></li>
+      </ul>
+    </div>
+  </li>
 </ul>
 </form></center><script src="script.js"></script></body></html>
