@@ -23,7 +23,7 @@ form div [type=file] {
 	cursor: inherit;
 }
 form div:not(.row):not(.row div):not(ul div) {
-	max-width: 40%;
+	max-width: 40% !important;
 	overflow: hidden;
 	position: relative;
 	margin: 15px;
