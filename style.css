@@ -56,7 +56,7 @@ body>canvas {
 	margin: auto;
 	margin-top: 10px;
 	display: block !important;
-	background: url(meme.png) no-repeat 100%/cover;
+	background: url(https://via.placeholder.com/512/fff/000?text=Upload+an+image) no-repeat 100%/cover;
 }
 @media screen and (orientation:portrait) { body>canvas{margin-top:0}}
 .row, input { margin-bottom: 3px !important }
