@@ -11,6 +11,16 @@ A meme generator for the web. Incomplete and in progress
 7. Choose a text color
 - When you are done, you can click the download button
 
+# Features
+- Same res images
+- Add top and bottom text to images
+- Upload a photo, take a photo (mobile), or import from another app (mobile)
+- Custom fonts and text colors
+- Advanced features - rotation
+- Beautiful material design
+- Quick downloading
+- No ads
+
 # Apps
 There will be an Android, iOS, and Windows app, a Chrome, Firefox, and Opera extension, and a Facebook app.
 
