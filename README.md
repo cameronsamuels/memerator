@@ -14,5 +14,16 @@ A meme generator for the web. Incomplete and in progress
 # Apps
 There will be an Android, iOS, and Windows app, a Chrome, Firefox, and Opera extension, and a Facebook app.
 
+# Contributing
+You may fork this repo and submit a pull request for us to merge. We will gladly appreciate it.
+
+Also, if you found a bug or unexpected behavior, or even have a suggestion, please open an issue in the issues tab. We will love to make our app the best it can be.
+
+# Team
+The memerator team includes Cameron Samuels, Toby Latino, and Leo.
+
 # About
-The memerator team includes Cameron Samuels, Toby Latino, and Leo
+We used [materializecss](http://materializecss.com) for the good looking material style. We used JQuery as a library. We used HTML5 canvases for the method to add text to the image to make it a meme.
+
+# License
+This app is distributed under the [MIT License](LICENSE). It has been modified to disallow selling, and sublicensing.
