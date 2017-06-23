@@ -49,7 +49,6 @@ function update() { //updates text
 	ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	d('a').href = canvas.toDataURL();
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
-// 	$('.dropdown-content a').html($('.dropdown-content a').html().replace('<i class="material-icons">done</i>', ''));
 	$(".dropdown-content a").html(function(index, text) {
 	    return text.replace('<i class="material-icons">done</i>', "");
 	});
@@ -62,18 +61,11 @@ function rotate() { // handles rotation on click
 	rt = rt==1?0:1;
 	if (rt == 1) { canvas.width = img.height; canvas.height = img.width }
 	else { canvas.width = img.width; canvas.height = img.height }
-	// translate to center-canvas 
-    	// the origin [0,0] is now center-canvas
     	ctx.translate(canvas.width / 2, canvas.height / 2);
-	// roate the canvas by +90% (==Math.PI/2)
 	r -= 1.5708;
 	ctx.rotate(r);
-	// draw the signature
-	// since images draw from top-left offset the draw by 1/2 width & height
 	ctx.drawImage(img, -img.width / 2, -img.height / 2);
-	// un-rotate the canvas by -90% (== -Math.PI/2)
 	ctx.rotate(-r);
-	// un-translate the canvas back to origin==top-left canvas
 	ctx.translate(-canvas.width / 2, -canvas.height / 2);
 	color = $('.jscolor').css('background-color');
 	ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
@@ -89,4 +81,3 @@ function rotate() { // handles rotation on click
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 }
 $('input:text:visible:first').keypress(function(e){if(e.which==13)$('input[type=text]')[1].focus()});
-// $('body>div:last-child').mouseup(function(){update()});
