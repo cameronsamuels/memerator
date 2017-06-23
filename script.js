@@ -46,7 +46,7 @@ function update() { //updates text
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ";
 	ctx.strokeText(document.querySelectorAll('input')[2].value, 5, canvas.height - (canvas.height / 67));
-	ctx.fillText(document.querySelectorAll('input')[2].value, 5, canvas.height - (canvas.height / 67));
+	ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	d('a').href = canvas.toDataURL();
 	canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 // 	$('.dropdown-content a').html($('.dropdown-content a').html().replace('<i class="material-icons">done</i>', ''));
