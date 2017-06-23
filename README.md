@@ -30,7 +30,7 @@ You may fork this repo and submit a pull request for us to merge. We will gladly
 Also, if you found a bug or unexpected behavior, or even have a suggestion, please open an issue in the issues tab. We will love to make our app the best it can be.
 
 # Team
-The memerator team includes Cameron Samuels, Toby Latino, and Leo.
+The memerator team includes [Cameron Samuels](http://cameronsamuels.com), [Toby Latino](http://github.com/Pipe-to-Grep), and [Leo](http://github.com/Acilliron).
 
 # About
 We used [materializecss](http://materializecss.com) for the good looking material style. We used JQuery and JSColor as libraries. We used HTML5 canvases for the method to add text to the image to make it a meme.
