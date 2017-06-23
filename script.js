@@ -44,7 +44,7 @@ function update() { //updates text
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-	ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ";
+	ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
 	ctx.strokeText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	d('a').href = canvas.toDataURL();
@@ -82,7 +82,7 @@ function rotate() { // handles rotation on click
 	ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
 	ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
 	ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-	ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ";
+	ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
 	ctx.strokeText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
 	d('a').href = canvas.toDataURL();
