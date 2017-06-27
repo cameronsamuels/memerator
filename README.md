@@ -2,7 +2,7 @@
 A meme generator for the web. Incomplete and in progress
 
 # How to
-1. Go to <http://cameronsamuels.com/memerator> to use
+1. Go to <http://www.memerator.tk> to use
 2. Upload an image by clicking the upload button
 3. Type the wanted top and bottom text
 4. Click the advanced options collapsible container to show/hide the advanced settings
@@ -12,7 +12,7 @@ A meme generator for the web. Incomplete and in progress
 - When you are done, you can click the download button
 
 # Features
-- Same res images
+- Same resolution of the image
 - Add top and bottom text to images
 - Upload a photo, take a photo (mobile), or import from another app (mobile)
 - Custom fonts and text colors
