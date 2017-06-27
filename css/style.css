@@ -1,4 +1,4 @@
-@font-face{font-family:impac;src:url('impact.ttf') format("truetype")}
+@font-face{font-family:impac;src:url('../fonts/impact.ttf') format("truetype")}
 html, body {
 	font-family: arial;
 	overflow: hidden;
