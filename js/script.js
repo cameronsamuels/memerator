@@ -1,11 +1,5 @@
-var d = function(i) {
-        return document.querySelector(i)
-    },
-    img, canvas = d('canvas'),
-    r = 0,
-    rt = 0,
-    font = "impac",
-    color = "#fff";
+var d = function(i) { return document.querySelector(i) },
+img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff";
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
     var url = this.value,
