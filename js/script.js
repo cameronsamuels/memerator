@@ -27,7 +27,7 @@ d('[type=file]').addEventListener("change", function(event) {
             canvas.style.background = "url(" + img.src + ") no-repeat 100%/cover";
         };
         reader.readAsDataURL(d('[type=file]').files[0]);
-    } else { /* not img */ }
+    } else alert('This file is not a compatible file.\nYou may upload a .GIF, .PNG, .JPEG, .JPG, .TIFF, or .BMP currently.\nWe will add support for more later on.');
 }, false);
 function text() {
     clearTimeout(ut);
