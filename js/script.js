@@ -1,5 +1,5 @@
 var d = function(i) { return document.querySelector(i) },
-img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff";
+img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut;
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
     var url = this.value,
@@ -9,14 +9,12 @@ d('[type=file]').addEventListener("change", function(event) {
         reader.onloadend = function(e) {
             img = new Image();
             img.onload = function() {
-                canvas.width = img.width;
-                canvas.height = img.height;
+                canvas.width = img.width, canvas.height = img.height;
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-                d('#download').id = '';
-                d('#advanced').id = '';
+                d('#download').id = '', d('#advanced').id = '';
                 color = $('.jscolor').css('background-color');
                 ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
-                    ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
+                ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
                 ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
                 ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
                 ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
@@ -26,13 +24,11 @@ d('[type=file]').addEventListener("change", function(event) {
                 $('#upload').html('Replace' + $('#upload').html().replace('Upload', ''));
             }
             img.src = e.target.result;
-            canvas.style.background = "url(" + e.target.result + ") no-repeat 100%/cover";
+            canvas.style.background = "url(" + img.src + ") no-repeat 100%/cover";
         };
         reader.readAsDataURL(d('[type=file]').files[0]);
     } else { /* not img */ }
 }, false);
-var ut;
-
 function text() {
     clearTimeout(ut);
     ut = setTimeout(update, 500)
