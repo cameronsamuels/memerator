@@ -1,5 +1,5 @@
 var d = function(i) { return document.querySelector(i) },
-img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut;
+img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut, watermark = 1;
 canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
 d('[type=file]').addEventListener("change", function(event) {
     var url = this.value,
@@ -9,6 +9,7 @@ d('[type=file]').addEventListener("change", function(event) {
         reader.onloadend = function(e) {
             img = new Image();
             img.onload = function() {
+                if (Math.min(img.height, img.width) < 256) watermark = 0;
                 canvas.width = img.width, canvas.height = img.height;
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
                 d('#download').id = '', d('#advanced').id = '';
@@ -48,7 +49,7 @@ function update() { //updates text
     ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
     ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
     ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
-    ctx.strokeText('www.memerator.tk', 5, canvas.height - (canvas.height / 67));
+    if (watermark) ctx.strokeText('www.memerator.tk', 5, canvas.height - (canvas.height / 67)),
     ctx.fillText('www.memerator.tk', 5, canvas.height - (canvas.height / 67));
     d('a').href = canvas.toDataURL();
     canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
@@ -79,7 +80,7 @@ function rotate() { // handles rotation on click
     ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
     ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
     ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
-    ctx.strokeText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
+    if (watermark) ctx.strokeText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67)),
     ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
     d('a').href = canvas.toDataURL();
     canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
