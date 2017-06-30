@@ -80,8 +80,8 @@ function rotate() { // handles rotation on click
     ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
     ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
     ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
-    if (watermark) ctx.strokeText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67)),
-    ctx.fillText('cameronsamuels.com/memerator', 5, canvas.height - (canvas.height / 67));
+    if (watermark) ctx.strokeText('www.memerator.tk', 5, canvas.height - (canvas.height / 67)),
+    ctx.fillText('www.memerator.tk', 5, canvas.height - (canvas.height / 67));
     d('a').href = canvas.toDataURL();
     canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
 }
