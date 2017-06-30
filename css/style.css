@@ -44,7 +44,7 @@ a[download] {
 	margin: 5px 0;
 }
 .collapsible-body {
-	padding: 2px !important;	
+	padding: 10px !important;	
 }
 .material-icons { margin-right: 0 !important }
 #download, #advanced { display: none !important }
