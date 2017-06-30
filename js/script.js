@@ -67,13 +67,8 @@ function rotate() { // handles rotation on click
     if ($('input[type=text]').css('visibility') == 'hidden') return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     rt = rt == 1 ? 0 : 1;
-    if (rt == 1) {
-        canvas.width = img.height;
-        canvas.height = img.width
-    } else {
-        canvas.width = img.width;
-        canvas.height = img.height
-    }
+    if (rt) canvas.width = img.height, canvas.height = img.width;
+    else canvas.width = img.width, canvas.height = img.height;
     ctx.translate(canvas.width / 2, canvas.height / 2);
     r -= 1.5708;
     ctx.rotate(r);
@@ -82,7 +77,7 @@ function rotate() { // handles rotation on click
     ctx.translate(-canvas.width / 2, -canvas.height / 2);
     color = $('.jscolor').css('background-color');
     ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
-        ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
+    ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
     ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
     ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
     ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
