@@ -10,15 +10,15 @@
       <link rel="apple-touch-icon" href="img/app.png">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <script src="js/jquery.js"></script>
-      <link href="css/style.css" rel="stylesheet" />
+      <link href="css/style.css" rel="stylesheet">
       <link rel="stylesheet" href="css/materialize.css">
       <script src="js/materialize.js"></script>
       <script src="js/jscolor.js"></script>
       <!--[if IE]><script>alert("This browser is unsupported for use with MEMERATOR. Get a supported browser to use MEMERATOR.");window.location="https://www.google.com/chrome/browser/desktop/index.html"</script><![endif]-->
    </head>
    <body>
-      <canvas></canvas>
       <center>
+         <canvas></canvas>
          <form class="col s12">
             <div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
                "image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
@@ -38,7 +38,7 @@
                   <div class="collapsible-header" onclick="window.scroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},1);setTimeout(function(){clearInterval(window.scroll)},200)">Advanced settings</div>
                   <div class="collapsible-body">
                      <div onclick="rotate()" class="waves-effect waves-light btn"><i class="material-icons">replay</i></div>
-                     <br />
+                     <br>
                      <a class='dropdown-button btn' id="font" href='#' data-activates='fontDropDown'>Font</a>
                      <ul id='fontDropDown' class='dropdown-content'>
                         <li><a onclick='font="impac";update()'>Default</a></li>
