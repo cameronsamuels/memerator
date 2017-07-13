@@ -23,6 +23,7 @@ d('[type=file]').addEventListener("change", function(event) {
                 d('a').href = canvas.toDataURL();
                 $('.row').css('visibility', 'visible');
                 $('#upload').html('Replace' + $('#upload').html().replace('Upload', ''));
+                $('.jscolor').click(function(){$('body>div:last-child').mouseup(function(){setTimeout(update,500)})})
             }
             img.src = e.target.result;
             canvas.style.background = "url(" + img.src + ") no-repeat 100%/cover";
