@@ -36,3 +36,5 @@ We used [materializecss](http://materializecss.com) for the good looking materia
 The memerator team includes [Cameron Samuels](http://cameronsamuels.com), [Toby Latino](http://github.com/Pipe-to-Grep), and [Leo](http://github.com/Acilliron).
 ### License
 This app is distributed under the [MIT License](LICENSE). It has been modified to disallow selling, and sublicensing.
+### Tools
+We used [JQuery](https://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com). We used Roboto as the font for the app, and impac as the default font for the meme.
