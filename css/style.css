@@ -35,7 +35,7 @@ form a:not(li a) {
 	display: block;
 	margin-left: -2rem;
 }
-a[download] { color: #fff !important }
+a[href] { color: #fff !important }
 .dropdown-button {
 	max-width: 45%;
 	width: 46% !important;
