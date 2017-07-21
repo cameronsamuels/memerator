@@ -21,6 +21,7 @@ d('[type=file]').addEventListener("change", function() {
                 cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7);
                 cx.fillText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
                 d('a').href = cv.toDataURL();
+                if (Math.min(img.height, img.width) < 768) $('a[href]').attr('download', 'meme.png');
                 $('.row').css('visibility', 'visible');
                 $('#upload').html('Replace' + $('#upload').html().replace('Upload', ''));
                 $('.jscolor').click(function(){$('body>div:last-child').on('mouseleave touchend mouseup', function(){setTimeout(update,200)})});
