@@ -1,12 +1,12 @@
 var d = function(i) { return document.querySelector(i) },
-img, cv = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut, mrk = 1;
+img, cv = $('canvas')[0], r = 0, rt = 0, font = "impac", color = "#fff", ut, mrk = 1;
 cv.width = 1024, cv.height = 1024, cx = cv.getContext("2d"); // cv dimensions
 d('[type=file]').addEventListener("change", function() {
     var url = this.value,
         ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
-    if (d('input').files && d('input').files[0] && ["gif","png","jpeg","jpg","tiff","bmp"].indexOf(ext) != -1) {
-        var rdr = new FileReader();
-        rdr.onloadend = function(e) {
+        if (d('input').files && d('input').files[0] && ["gif","png","jpeg","jpg","tiff","bmp"].indexOf(ext) != -1) {
+            var rdr = new FileReader();
+            rdr.onloadend = function(e) {
             img = new Image();
             img.onload = function() {
                 if (Math.min(img.height, img.width) < 256) mrk = 0;
@@ -16,10 +16,10 @@ d('[type=file]').addEventListener("change", function() {
                 color = $('.jscolor').css('background-color');
                 cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
                 cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
-                cx.strokeText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
-                cx.strokeText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
-                cx.fillText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
-                cx.fillText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+                cx.strokeText($('input')[1].value, cv.width / 2, cv.height / 7);
+                cx.strokeText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+                cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7);
+                cx.fillText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
                 d('a').href = cv.toDataURL();
                 $('.row').css('visibility', 'visible');
                 $('#upload').html('Replace' + $('#upload').html().replace('Upload', ''));
@@ -62,23 +62,19 @@ function update() { //updates text
 }
 function rotate() { // handles rotation on click
     if ($('input[type=text]').css('visibility') == 'hidden') return;
-    cx.clearRect(0, 0, cv.width, cv.height);
-    rt = rt == 1 ? 0 : 1;
+    cx.clearRect(0, 0, cv.width, cv.height); rt = rt == 1 ? 0 : 1;
     if (rt) cv.width = img.height, cv.height = img.width;
     else cv.width = img.width, cv.height = img.height;
-    cx.translate(cv.width / 2, cv.height / 2);
-    r -= 1.5708;
-    cx.rotate(r);
-    cx.drawImage(img, -img.width / 2, -img.height / 2);
-    cx.rotate(-r);
-    cx.translate(-cv.width / 2, -cv.height / 2);
+    cx.translate(cv.width / 2, cv.height / 2); r -= 1.5708;
+    cx.rotate(r); cx.drawImage(img, -img.width / 2, -img.height / 2);
+    cx.rotate(-r); cx.translate(-cv.width / 2, -cv.height / 2);
     color = $('.jscolor').css('background-color');
     cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
     cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
-    cx.strokeText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
-    cx.strokeText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
-    cx.fillText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
-    cx.fillText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.strokeText($('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.strokeText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.fillText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
     cx.textAlign = "start", cx.fillStyle = "#fff", cx.font = (cv.height / 32) + "px arial ", cx.lineWidth = cv.height / 256;
     if (mrk) cx.strokeText('memerator.tk', 5, cv.height - (cv.height / 67)),
     cx.fillText('memerator.tk', 5, cv.height - (cv.height / 67));
