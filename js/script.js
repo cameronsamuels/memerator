@@ -1,34 +1,34 @@
 var d = function(i) { return document.querySelector(i) },
-img, canvas = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut, watermark = 1;
-canvas.width = 1024, canvas.height = 1024, ctx = canvas.getContext("2d"); // canvas dimensions
-d('[type=file]').addEventListener("change", function(event) {
+img, cv = d('canvas'), r = 0, rt = 0, font = "impac", color = "#fff", ut, mrk = 1;
+cv.width = 1024, cv.height = 1024, cx = cv.getContext("2d"); // cv dimensions
+d('[type=file]').addEventListener("change", function() {
     var url = this.value,
         ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(); // file extension checker. proceed if correct.
-    if (d('input').files && d('input').files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg" || ext == "tiff" || ext == "bmp")) {
-        var reader = new FileReader();
-        reader.onloadend = function(e) {
+    if (d('input').files && d('input').files[0] && ["gif","png","jpeg","jpg","tiff","bmp"].indexOf(ext) != -1) {
+        var rdr = new FileReader();
+        rdr.onloadend = function(e) {
             img = new Image();
             img.onload = function() {
-                if (Math.min(img.height, img.width) < 256) watermark = 0;
-                canvas.width = img.width, canvas.height = img.height;
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+                if (Math.min(img.height, img.width) < 256) mrk = 0;
+                cv.width = img.width, cv.height = img.height;
+                cx.drawImage(img, 0, 0, cv.width, cv.height, 0, 0, cv.width, cv.height);
                 d('#download').id = '', d('#advanced').id = '';
                 color = $('.jscolor').css('background-color');
-                ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
-                ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
-                ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-                ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-                ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-                ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-                d('a').href = canvas.toDataURL();
+                cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
+                cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
+                cx.strokeText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+                cx.strokeText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+                cx.fillText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+                cx.fillText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+                d('a').href = cv.toDataURL();
                 $('.row').css('visibility', 'visible');
                 $('#upload').html('Replace' + $('#upload').html().replace('Upload', ''));
                 $('.jscolor').click(function(){$('body>div:last-child').on('mouseleave touchend mouseup', function(){setTimeout(update,200)})});
             }
             img.src = e.target.result;
-            canvas.style.background = "url(" + img.src + ") no-repeat 100%/cover";
+            cv.style.background = "url(" + img.src + ") no-repeat 100%/cover";
         };
-        reader.readAsDataURL(d('[type=file]').files[0]);
+        rdr.readAsDataURL(d('[type=file]').files[0]);
     } else alert('This file is not a compatible file.\nYou may upload a .GIF, .PNG, .JPEG, .JPG, .TIFF, or .BMP currently.\nWe will add support for more later on.');
 }, false);
 function text() {
@@ -36,55 +36,54 @@ function text() {
     ut = setTimeout(update, 500)
 } //fixes lag and on keyup inputs
 function update() { //updates text
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.translate(canvas.width / 2, canvas.height / 2);
-    ctx.rotate(r);
-    ctx.drawImage(img, -img.width / 2, -img.height / 2);
-    ctx.rotate(-r);
-    ctx.translate(-canvas.width / 2, -canvas.height / 2);
+    cx.clearRect(0, 0, cv.width, cv.height);
+    cx.translate(cv.width / 2, cv.height / 2);
+    cx.rotate(r);
+    cx.drawImage(img, -img.width / 2, -img.height / 2);
+    cx.rotate(-r);
+    cx.translate(-cv.width / 2, -cv.height / 2);
     color = $('.jscolor').css('background-color');
-    ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
-        ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
-    ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-    ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-    ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-    ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-    ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
-    if (watermark) ctx.strokeText('www.memerator.tk', 5, canvas.height - (canvas.height / 67)),
-    ctx.fillText('www.memerator.tk', 5, canvas.height - (canvas.height / 67));
-    d('a').href = canvas.toDataURL();
-    canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
-    $(".dropdown-content a").html(function(index, text) {
-        return text.replace('<i class="material-icons">done</i>', "");
+    cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
+    cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
+    cx.strokeText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.strokeText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.fillText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.fillText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.textAlign = "start", cx.fillStyle = "#fff", cx.font = (cv.height / 32) + "px arial ", cx.lineWidth = cv.height / 256;
+    if (mrk) cx.strokeText('memerator.tk', 5, cv.height - (cv.height / 67)),
+    cx.fillText('memerator.tk', 5, cv.height - (cv.height / 67));
+    d('a').href = cv.toDataURL();
+    cv.style.background = "url(" + cv.toDataURL() + ") no-repeat 100%/cover";
+    $(".dropdown-content a").html(function(i, t) {
+        return t.replace('<i class="material-icons">done</i>', "");
     });
     $('a[onclick*=\'"' + font + '"\']').html("<i class='material-icons'>done</i>" + $('a[onclick*=\'"' + font + '"\']').html());
     $('#font').css('font-family', font);
 }
-
 function rotate() { // handles rotation on click
     if ($('input[type=text]').css('visibility') == 'hidden') return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    cx.clearRect(0, 0, cv.width, cv.height);
     rt = rt == 1 ? 0 : 1;
-    if (rt) canvas.width = img.height, canvas.height = img.width;
-    else canvas.width = img.width, canvas.height = img.height;
-    ctx.translate(canvas.width / 2, canvas.height / 2);
+    if (rt) cv.width = img.height, cv.height = img.width;
+    else cv.width = img.width, cv.height = img.height;
+    cx.translate(cv.width / 2, cv.height / 2);
     r -= 1.5708;
-    ctx.rotate(r);
-    ctx.drawImage(img, -img.width / 2, -img.height / 2);
-    ctx.rotate(-r);
-    ctx.translate(-canvas.width / 2, -canvas.height / 2);
+    cx.rotate(r);
+    cx.drawImage(img, -img.width / 2, -img.height / 2);
+    cx.rotate(-r);
+    cx.translate(-cv.width / 2, -cv.height / 2);
     color = $('.jscolor').css('background-color');
-    ctx.textAlign = "center", ctx.fillStyle = color, ctx.strokeStyle = '#000',
-    ctx.font = (canvas.height / 8) + "px " + font, ctx.lineWidth = canvas.height / 64;
-    ctx.strokeText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-    ctx.strokeText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-    ctx.fillText(document.querySelectorAll('input')[1].value, canvas.width / 2, canvas.height / 7);
-    ctx.fillText(document.querySelectorAll('input')[2].value, canvas.width / 2, canvas.height - (canvas.height / 17));
-    ctx.textAlign = "start", ctx.fillStyle = "#fff", ctx.font = (canvas.height / 32) + "px arial ", ctx.lineWidth = canvas.height / 256;
-    if (watermark) ctx.strokeText('www.memerator.tk', 5, canvas.height - (canvas.height / 67)),
-    ctx.fillText('www.memerator.tk', 5, canvas.height - (canvas.height / 67));
-    d('a').href = canvas.toDataURL();
-    canvas.style.background = "url(" + canvas.toDataURL() + ") no-repeat 100%/cover";
+    cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
+    cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
+    cx.strokeText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.strokeText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.fillText(document.querySelectorAll('input')[1].value, cv.width / 2, cv.height / 7);
+    cx.fillText(document.querySelectorAll('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
+    cx.textAlign = "start", cx.fillStyle = "#fff", cx.font = (cv.height / 32) + "px arial ", cx.lineWidth = cv.height / 256;
+    if (mrk) cx.strokeText('memerator.tk', 5, cv.height - (cv.height / 67)),
+    cx.fillText('memerator.tk', 5, cv.height - (cv.height / 67));
+    d('a').href = cv.toDataURL();
+    cv.style.background = "url(" + cv.toDataURL() + ") no-repeat 100%/cover";
 }
 $('input:text:visible:first').keypress(function(e) {
     if (e.which == 13) $('input[type=text]')[1].focus()
