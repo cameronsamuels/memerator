@@ -1,67 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title>Memerator</title>
-      <meta name="description" content="Create memes for FREE! Upload, Type text, Download! It's that simple! Create memes now!">
-      <meta name="viewport" content="user-scalable=no,initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1">
-      <meta name="copyright" content="Copyright 2017 The Coderators">
-      <link rel="shortcut icon" href="img/icon.png">
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!DOCTYPE html><html lang="en">
+<head>
+   <title>Memerator</title>
+   <meta content="Create memes for FREE! Upload, Type text, Download! It's that simple! Create memes now!" name="description">
+   <meta content="user-scalable=no,initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1" name="viewport">
+   <meta content="Copyright 2017 The Coderators" name="copyright">
+   <link href="img/icon.png" rel="shortcut icon">
+   <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-102959929-1', 'auto');
-        ga('send', 'pageview');
+          ga('create', 'UA-102959929-1', 'auto');
+          ga('send', 'pageview');
 
-      </script>
-      <meta content="http://www.memerator.tk/img/app.png" property="og:image">
-      <link rel="apple-touch-icon" href="img/app.png">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <script src="js/jquery.js"></script>
-      <link href="css/style.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/materialize.css">
-      <script src="js/materialize.js"></script>
-      <script src="js/jscolor.js"></script>
-      <!--[if IE]><script>alert("This browser is unsupported for use with MEMERATOR. Get a supported browser to use MEMERATOR.");window.location="https://www.google.com/chrome/browser/desktop/index.html"</script><![endif]-->
-   </head>
-   <body>
-      <center>
-         <canvas></canvas>
-         <form class="col s12">
-            <div id="upload" class="waves-effect waves-light btn">Upload<input type="file" accept=
-               "image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp"/></div>
-            <div class="waves-effect waves-light btn" id="download"><a download="meme.png">Download</a></div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <input id="top" type="text" class="validate" onkeyup="text()"><label for="top">Top text</label>
+   </script>
+   <meta content="http://memerator.tk/img/app.png" property="og:image">
+   <link href="img/app.png" rel="apple-touch-icon">
+   <meta content="yes" name="apple-mobile-web-app-capable">
+   <script src="js/jquery.js"></script>
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/materialize.css" rel="stylesheet">
+   <script src="js/materialize.js"></script>
+   <script src="js/jscolor.js"></script>
+   <!--[if IE]><script>alert("This browser is unsupported for use with MEMERATOR. Get a supported browser to use MEMERATOR.");window.location="https://www.google.com/chrome/browser/desktop/index.html"</script><![endif]-->
+</head>
+<body>
+   <center>
+      <canvas></canvas>
+      <form class="col s12">
+         <div class="waves-effect waves-light btn" id="upload">Upload<input accept="image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp" type="file"></div>
+         <div class="waves-effect waves-light btn" id="download"><a>Download</a></div>
+         <div class="row"><div class="input-field col s12"><input class="validate" id="top" onkeyup="text()" type="text"><label for="top">Top text</label></div></div>
+         <div class="row"><div class="input-field col s12"><input class="validate" id="bottom" onkeyup="text()" type="text"><label for="bottom">Bottom text</label></div></div>
+         <ul class="collapsible" data-collapsible="advanced" id="advanced">
+            <li>
+               <div class="collapsible-header" onclick="window.scroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},1);setTimeout(function(){clearInterval(window.scroll)},200)">Advanced settings</div>
+               <div class="collapsible-body">
+                  <div class="waves-effect waves-light btn" onclick="rotate()"><i class="material-icons">replay</i></div><br>
+                  <a class='dropdown-button btn' data-activates='fontDropDown' href='#' id="font">Font</a>
+                  <ul class='dropdown-content' id='fontDropDown'>
+                     <li><a onclick='font="impac";update()'>Default</a></li>
+                     <li><a onclick='font="monospace";update()'>Mono</a></li>
+                     <li><a onclick='font="sans-serif";update()'>Sans</a></li>
+                     <li><a onclick='font="serif";update()'>Serif</a></li>
+                  </ul>
+                  <button class="waves-effect waves-light btn jscolor {valueElement:null,value:'fff'}" onclick="this.jscolor.show()"><i class="material-icons">group_work</i></button>
                </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <input id="bottom" type="text" class="validate" onkeyup="text()"><label for="bottom">Bottom text</label>
-               </div>
-            </div>
-            <ul class="collapsible" data-collapsible="advanced" id="advanced">
-               <li>
-                  <div class="collapsible-header" onclick="window.scroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},1);setTimeout(function(){clearInterval(window.scroll)},200)">Advanced settings</div>
-                  <div class="collapsible-body">
-                     <div onclick="rotate()" class="waves-effect waves-light btn"><i class="material-icons">replay</i></div>
-                     <br>
-                     <a class='dropdown-button btn' id="font" href='#' data-activates='fontDropDown'>Font</a>
-                     <ul id='fontDropDown' class='dropdown-content'>
-                        <li><a onclick='font="impac";update()'>Default</a></li>
-                        <li><a onclick='font="monospace";update()'>Mono</a></li>
-                        <li><a onclick='font="sans-serif";update()'>Sans</a></li>
-                        <li><a onclick='font="serif";update()'>Serif</a></li>
-                     </ul>
-                     <button onclick="this.jscolor.show()" class="waves-effect waves-light btn jscolor {valueElement:null,value:'fff'}"><i class="material-icons">group_work</i></button>
-                  </div>
-               </li>
-            </ul>
-         </form>
-      </center>
-      <script src="js/script.js"></script>
-   </body>
-</html>
+            </li>
+         </ul>
+      </form>
+   </center>
+   <script src="js/script.js"></script>
+</body></html>
