@@ -48,8 +48,8 @@ a[href] { color: #fff !important }
 .row { visibility: hidden;color: #9e9e9e !important }
 .dropdown-content li { text-align: center !important }
 center>canvas {
-	height: 100vw;
-	max-height: 40vh;
+	max-width: 98vw;
+    	max-height: 40vh;
 	margin-top: 10px;
 	background: url(../img/app.png) no-repeat 100%/cover;
 }
