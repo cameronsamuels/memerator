@@ -38,12 +38,13 @@ function text() {
     ut = setTimeout(update, 500)
 }
 function update() {
+    max = Math.max($("input")[1].value.length, $("input")[2].value.length);
     cx.clearRect(0, 0, cv.width, cv.height), cx.translate(cv.width / 2, cv.height / 2),
     cx.rotate(r), cx.drawImage(img, -img.width / 2, -img.height / 2),
     cx.rotate(-r), cx.translate(-cv.width / 2, -cv.height / 2);
     color = $('.jscolor').css('background-color');
     cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
-    cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
+    cx.font = ((cv.height / 8) - (max>40?(max<50?max*1.2:max*1.1):max*1.3)) + "px " + font, cx.lineWidth = cv.height / 64;
     cx.strokeText($('input')[1].value, cv.width / 2, cv.height / 7),
     cx.strokeText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17)),
     cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7),
@@ -57,6 +58,7 @@ function update() {
     $('#font').css('font-family', font);
 }
 function rotate() {
+    max = Math.max($("input")[1].value.length, $("input")[2].value.length);
     if ($('input[type=text]').css('visibility') == 'hidden') return;
     cx.clearRect(0, 0, cv.width, cv.height);
     rt = rt == 1 ? 0 : 1;
@@ -67,7 +69,7 @@ function rotate() {
     cx.rotate(r), cx.drawImage(img, -img.width / 2, -img.height / 2), cx.rotate(-r), cx.translate(-cv.width / 2, -cv.height / 2);
     color = $('.jscolor').css('background-color');
     cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
-    cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
+    cx.font = ((cv.height / 8) - (max>40?(max<50?max*1.2:max*1.1):max*1.3)) + "px " + font, cx.lineWidth = cv.height / 64;
     cx.strokeText($('input')[1].value, cv.width / 2, cv.height / 7),
     cx.strokeText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17)),
     cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7),
