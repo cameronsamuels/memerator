@@ -1,7 +1,7 @@
 @import "materialize.css";
 @font-face{font-family:impac;src:url('../fonts/impact.ttf') format("truetype")}
 html, body {
-	font-family: arial;
+	font-family: sans-serif;
 	overflow: hidden;
 	user-select: none;
 	-webkit-user-select: none;
