@@ -1,38 +1,25 @@
-# The Memerator
-A meme generator for the web. Incomplete and in progress.
+# Memerator
+A meme generator for the web 100% free with no ads. Create your own memes using any image. Customize with advanced features.
 # How to
-1. Go to <http://memerator.tk> to use
-2. Upload an image by clicking the upload button
-3. Type the wanted top and bottom text
-4. Click the advanced options collapsible container to show/hide the advanced settings
-5. Fix the rotation if it's rotated wrong
-6. Choose a custom font
+### Main features
+1. Go to <https://memerator.tk> to use
+2. Upload an image (or take a photo too on a mobile device)
+3. Add top and bottom text
+### Advanced features
+4. Change the rotation
+5. Select a custom font
 7. Choose a custom text color
 8. Click the download button (or right click the image and save)
-# Features
-- Keeps the same resolution
-- Top and bottom text
-- Upload a photo, take a photo (mobile), or import from another app (mobile)
-- Custom fonts and text colors
-- Advanced features like rotation
-- Quick, easy, and free downloading
-- No ads!! No in-app purchases!! No cost!!
-- Beautiful material design
-- Fast & efficient
-# Apps
-There will be an Android, iOS, and Windows app, a Chrome, Firefox, and Opera extension, and a Facebook app.
 # Contributing
-You may fork this repo and submit a pull request for us to merge. We will gladly appreciate it.
-
-Also, if you found a bug or unexpected behavior, or even have a suggestion, please open an issue in the issues tab. We will love to make our app the best it can be.
+You may fork this repo and create a pull request. You will be listed as a contributor.
+<br>Also, if you found a bug or an unexpected behavior, or even have a suggestion, please [open an issue](https://git.io/vdv6V).
 # About
-This is a JavaScript application for use online. It was started in June 2017 and is made by [The Coderators](http://thecoderators.tk).
-### Team
-The memerator team includes [Cameron Samuels](http://cameronsamuels.com), [Toby Latino](http://github.com/Pipe-to-Grep), and [Leo](http://github.com/Acilliron).
-
-[![Cameron Samuels](https://git.io/v7fr7)](http://cameronsamuels.com)
-[![Toby Latino](https://git.io/v7T8o)](http://github.com/Pipe-to-Grep)
-### License
+Memerator is a JavaScript application available online. It's development started in June 2017 by The Coderators, now known as Xeleration.
+# Team
+[Cameron Samuels](https://cameronsamuels.com) - Project manager, lead developer
+<br>[Toby Latino](https://github.com/pipe-to-grep) - Developer
+<br>[Leo Gallis](https://github.com/acilliron) - Developer
+# License
 This app is distributed under the [Cameron Samuels License](LICENSE).
-### Tools
-We used [JQuery](http://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com). We used Roboto as the font for the app, and impac as the default font for the meme.
+# Attribution
+Memerator uses [JQuery](https://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com) Impac is the default font for the meme text.
