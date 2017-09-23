@@ -79,4 +79,19 @@ function rotate() {
     d('a').href = cv.toDataURL();
     cv.style.background = "url(" + cv.toDataURL() + ") no-repeat 100%/cover";
 }
+function changeFont(e) {
+    font = e;
+    update();
+}
 $('input:text:visible:first').keypress(function(e) { if (e.which == 13) $('input[type=text]')[1].focus() });
+$(".collapsible-header").click(function(){
+    window.scroll = setInterval(function(){ window.scrollTo(0, document.body.scrollHeight) }, 1);
+    setTimeout(function(){ clearInterval(window.scroll) }, 200);
+});
+$(".collapsible-body div:first-child").click(rotate);
+$("input[type=text]").keyup(text);
+$(".jscolor").click(function(){ this.jscolor.show() });
+$("#fontDropDown li:first-child a").click(function(){ changeFont("impac") });
+$("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace") });
+$("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif") });
+$("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif") });

@@ -27,21 +27,21 @@
       <form class="col s12">
          <div class="waves-effect waves-light btn" id="upload">Upload<input accept="image/*,.jpg,.jpeg,.png,.gif,.tiff,.bmp" type="file"></div>
          <div class="waves-effect waves-light btn" id="download"><a>Download</a></div>
-         <div class="row"><div class="input-field col s12"><input class="validate" id="top" maxlength="25" onkeyup="text()" type="text"><label for="top">Top text</label></div></div>
-         <div class="row"><div class="input-field col s12"><input class="validate" id="bottom" maxlength="25" onkeyup="text()" type="text"><label for="bottom">Bottom text</label></div></div>
+         <div class="row"><div class="input-field col s12"><input class="validate" id="top" maxlength="25" type="text"><label for="top">Top text</label></div></div>
+         <div class="row"><div class="input-field col s12"><input class="validate" id="bottom" maxlength="25" type="text"><label for="bottom">Bottom text</label></div></div>
          <ul class="collapsible" data-collapsible="advanced" id="advanced">
             <li>
-               <div class="collapsible-header" onclick="window.scroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},1);setTimeout(function(){clearInterval(window.scroll)},200)">Advanced settings</div>
+               <div class="collapsible-header">Advanced settings</div>
                <div class="collapsible-body">
-                  <div class="waves-effect waves-light btn" onclick="rotate()"><i class="material-icons">replay</i></div><br>
-                  <a class='dropdown-button btn' data-activates='fontDropDown' href='#' id="font">Font</a>
+                  <div class="waves-effect waves-light btn"><i class="material-icons">replay</i></div><br>
+                  <a class='dropdown-button btn' data-activates='fontDropDown' id="font">Font</a>
                   <ul class='dropdown-content' id='fontDropDown'>
-                     <li><a onclick='font="impac";update()'>Default</a></li>
-                     <li><a onclick='font="monospace";update()'>Mono</a></li>
-                     <li><a onclick='font="sans-serif";update()'>Sans</a></li>
-                     <li><a onclick='font="serif";update()'>Serif</a></li>
+                     <li><a>Default</a></li>
+                     <li><a>Mono</a></li>
+                     <li><a>Sans</a></li>
+                     <li><a>Serif</a></li>
                   </ul>
-                  <button class="waves-effect waves-light btn jscolor {valueElement:null,value:'fff'}" onclick="this.jscolor.show()"><i class="material-icons">group_work</i></button>
+                  <button class="waves-effect waves-light btn jscolor {valueElement:null,value:'fff'}"><i class="material-icons">group_work</i></button>
                </div>
             </li>
          </ul>
