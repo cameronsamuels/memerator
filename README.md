@@ -2,7 +2,7 @@
 A meme generator for the web 100% free with no ads. Create your own memes using any image. Customize with advanced features.
 # How to
 ### Main features
-1. Go to <https://memerator.tk> to use
+1. Go to <https://xel.company/memerator> to use
 2. Upload an image (or take a photo too on a mobile device)
 3. Add top and bottom text
 ### Advanced features
