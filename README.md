@@ -13,12 +13,11 @@ A meme generator for the web 100% free with no ads. Create your own memes using 
 # Contributing
 You may fork this repo and create a pull request. You will be listed as a contributor.
 <br>Also, if you found a bug or an unexpected behavior, or even have a suggestion, please [open an issue](https://git.io/vdv6V).
-# About
-Memerator is a JavaScript application available online. It's development started in June 2017 by The Coderators, now known as Xeleration.
 # Team
 [Cameron Samuels](https://cameronsamuels.com) - Project manager, lead developer
 <br>[Toby Latino](https://github.com/pipe-to-grep) - Developer
-<br>[Leo Gallis](https://github.com/acilliron) - Developer
+### Contributors
+[Robbin K](https://github.com/robbink) - [Leo Gallis](https://github.com/acilliron)
 # License
 This app is distributed under the [Cameron Samuels License](LICENSE).
 # Attribution
