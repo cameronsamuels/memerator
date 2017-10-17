@@ -26,6 +26,7 @@ d('[type=file]').addEventListener("change", function() {
                     $('body>div:last-child').on('mouseleave touchend mouseup', function() { setTimeout(update, 200) })
                 });
                 $('#font').css('font-family', font);
+                setTimeout(function(){$("#top").focus()}, 20);
             }
             img.src = e.target.result;
             cv.style.background = "url(" + img.src + ") no-repeat 100%/cover";
