@@ -11,7 +11,7 @@ d('[type=file]').addEventListener("change", function() {
                 if (Math.min(img.height, img.width) < 256) mrk = 0;
                 cv.width = img.width, cv.height = img.height;
                 cx.drawImage(img, 0, 0, cv.width, cv.height, 0, 0, cv.width, cv.height);
-                d('#download').id = '', d('#advanced').id = '';
+                $('.hidden').removeClass("hidden");
                 color = $('.jscolor').css('background-color');
                 cx.textAlign = "center", cx.fillStyle = color, cx.strokeStyle = '#000',
                 cx.font = (cv.height / 8) + "px " + font, cx.lineWidth = cv.height / 64;
@@ -96,4 +96,4 @@ $("#fontDropDown li:first-child a").click(function(){ changeFont("impac") });
 $("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace") });
 $("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif") });
 $("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif") });
-$("#download").click(function(){ ga('send', 'event', 'Download', 'Download'); });
+$("#download").click(function(){ ga('send', 'event', 'Download', 'Download') });
