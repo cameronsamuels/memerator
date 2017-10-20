@@ -21,4 +21,4 @@ You may fork this repo and create a pull request. You will be listed as a contri
 # License
 This app is distributed under the [Cameron Samuels License](LICENSE).
 # Attribution
-Memerator uses [JQuery](https://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com) Impac is the default font for the meme text.
+Memerator uses [JQuery](https://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com). Impac is the default font for the meme text.
