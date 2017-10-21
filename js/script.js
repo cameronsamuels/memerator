@@ -96,3 +96,4 @@ $("#fontDropDown li:first-child a").click(function(){ changeFont("impac") });
 $("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace") });
 $("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif") });
 $("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif") });
+//$("#download").click(function(){ ga('send', 'event', 'download', 'download') });
