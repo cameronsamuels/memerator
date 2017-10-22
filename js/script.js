@@ -92,8 +92,14 @@ $(".collapsible-header").click(function(){
 $(".collapsible-body div:first-child").click(rotate);
 $("input[type=text]").keyup(text);
 $(".jscolor").click(function(){ this.jscolor.show() });
-$("#fontDropDown li:first-child a").click(function(){ changeFont("impac") });
-$("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace") });
-$("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif") });
-$("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif") });
-//$("#download").click(function(){ ga('send', 'event', 'download', 'download') });
+$("#fontDropDown li:first-child a").click(function(){ changeFont("impac"), ga("send", "event", "font", "impac") });
+$("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace"), ga("send", "event", "font", "monospace") });
+$("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif"), ga("send", "event", "font", "sans-serif") });
+$("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif"), ga("send", "event", "font", "serif") });
+$("#download").click(function(){ setTimeout(ga("send", "event", "download", "download")), 500 }); 
+$("#upload").click(function(){ ga("send", "event", "upload", "upload") });
+$("#top").keypress(function(){ ga("send", "event", "text", "top text") });
+$("#bottom").keypress(function(){ ga("send", "event", "text", "bottom text") });
+$("#rotate").click(function(){ ga("send", "event", "rotate", "rotate") });
+$("#color").click(function(){ ga("send", "event", "color", "color") });
+//I will add a replace tracker when the bug associated with it is fixed. The ID also needs to be changed on image load
