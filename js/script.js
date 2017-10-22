@@ -79,10 +79,12 @@ function rotate() {
     if (mrk) cx.strokeText('memerator.tk', 5, cv.height - (cv.height / 67)), cx.fillText('memerator.tk', 5, cv.height - (cv.height / 67));
     d('a').href = cv.toDataURL();
     cv.style.background = "url(" + cv.toDataURL() + ") no-repeat 100%/cover";
+	ga("send", "event", "rotate", "rotate")
 }
 function changeFont(e) {
     font = e;
     update();
+	ga("send", "event", "font", e)
 }
 $('input:text:visible:first').keypress(function(e) { if (e.which == 13) $('input[type=text]')[1].focus() });
 $(".collapsible-header").click(function(){
@@ -91,15 +93,29 @@ $(".collapsible-header").click(function(){
 });
 $(".collapsible-body div:first-child").click(rotate);
 $("input[type=text]").keyup(text);
-$(".jscolor").click(function(){ this.jscolor.show() });
-$("#fontDropDown li:first-child a").click(function(){ changeFont("impac"), ga("send", "event", "font", "impac") });
-$("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace"), ga("send", "event", "font", "monospace") });
-$("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif"), ga("send", "event", "font", "sans-serif") });
-$("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif"), ga("send", "event", "font", "serif") });
-$("#download").click(function(){ setTimeout(ga("send", "event", "download", "download")), 500 }); 
+$(".jscolor").click(function(){ this.jscolor.show(),  ga("send", "event", "color", "color") });
+$("#fontDropDown li:first-child a").click(function(){ changeFont("impac") });
+$("#fontDropDown li:nth-child(2) a").click(function(){ changeFont("monospace") });
+$("#fontDropDown li:nth-child(3) a").click(function(){ changeFont("sans-serif") });
+$("#fontDropDown li:nth-child(4) a").click(function(){ changeFont("serif") });
+$("#download").click(function(){ setTimeout(ga("send", "event", "download", "download")), 1000 }); 
 $("#upload").click(function(){ ga("send", "event", "upload", "upload") });
-$("#top").keypress(function(){ ga("send", "event", "text", "top text") });
-$("#bottom").keypress(function(){ ga("send", "event", "text", "bottom text") });
-$("#rotate").click(function(){ ga("send", "event", "rotate", "rotate") });
-$("#color").click(function(){ ga("send", "event", "color", "color") });
-//I will add a replace tracker when the bug associated with it is fixed. The ID also needs to be changed on image load
+
+var rantop = false;
+function toptextanalytic() {
+	if (rantop === false) {
+		ga("send", "event", "text", "top text");
+		rantop = true
+	}
+}
+
+var ranbottom = false;
+function bottomtextanalytic() {
+	if (ranbottom === false) {
+		ga("send", "event", "text", "bottom text");
+		ranbottom = true
+	}
+}
+
+$("#top").keypress(function(){ toptextanalytic() });
+$("#bottom").keypress(function(){ bottomtextanalytic() });
