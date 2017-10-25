@@ -18,7 +18,7 @@ You may fork this repo and create a pull request. You will be listed as a contri
 [Cameron Samuels](https://cameronsamuels.com) - Project manager, lead developer
 <br>[Toby Latino](https://github.com/pipe-to-grep) - Developer
 ### Contributors
-[Robbin K](https://github.com/robbink) - [Leo Gallis](https://github.com/acilliron)
+[Robbin K](https://github.com/robbink) - [Leo Gallis](https://github.com/acilliron) - [Nova281](https://github.com/nova281)
 # License
 This app is distributed under the [Cameron Samuels License](LICENSE).
 # Attribution
