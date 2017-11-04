@@ -8,7 +8,7 @@ This lets us know that there is a bug, something that be improved, or a new feat
 ### Issue Guidelines
 When creating an issue, there are a few rules to follow. They are the following:
 - When someone is working on fixing the issue, assign it to them directly before they start working on it
-- The issue needs labels, but should be added by @CameronSamuels unless if it's a "requires review" or "help wanted" label
+- The issue needs labels, but should be added by [@CameronSamuels](https://github.com/cameronsamuels) unless if it's a "requires review" or "help wanted" label
 - The issue should have a detailed description
 - When there is a pr that solves an issue, the issue should contain the "has pr" label and be closed
 # Pull Requests
