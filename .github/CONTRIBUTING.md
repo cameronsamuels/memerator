@@ -33,6 +33,7 @@ To set up your coding environment, follow these steps:
    - `fix-#` for a bug fix (`#` would be `1` if there no active fix branches, `2` if it's the 2nd active fix branches, etc)
    - `feature-#` for a new feature (`#` would be `1` if there no active feature branches, `2` it's the 2nd active feature branches, etc)
    - `improvement-#` for an improvement (`#` would be `1` if there no active improvement branches, `2` it's the 2nd active improvement branches, etc)
+   - `github-#` for a repo file (`#` would be `1` if there no active github branches, `2` it's the 2nd active github branch, etc)
    - `misc-#` for a misc change (`#` would be `1` if there no active misc branches, `2` it's the 2nd active misc branches, etc)
 3. Commit the files with an appropriate commit title
    - `(issue)Commit title` for a commit resolving an issue
