@@ -13,8 +13,8 @@ If you do not enter this information, the app is pointless because it makes no m
 We use cookies for analytic tracking purposes.
 We do not store any cookies on your computer except for third-party cookies.
 ### 2b. Why do we use 'cookies'?
-We use cookies for analytic tracking purposes.
-It makes the Memerator a better app when we use them.
+In order for us to use third-party products in our app, cookies are used.
+It makes the Memerator a better app when we use these third-party products such as analytic tracking.
 
 ## 3. Third-party
 ### 3a. Third-party disclosure
@@ -49,4 +49,4 @@ Prairieville, LA 70769
 United States
 toby@xel.company
 </pre>
-Last edited on Sunday, November 5, 2017.
+Last edited on Monday, November 6, 2017.
