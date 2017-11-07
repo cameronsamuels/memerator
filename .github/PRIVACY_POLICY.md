@@ -14,11 +14,11 @@ We use cookies for analytic tracking purposes.
 We do not store any cookies on your computer except for third-party cookies.
 ### 2b. Why do we use 'cookies'?
 In order for us to use third-party products in our app, cookies are used.
-It makes the Memerator a better app when we use these third-party products such as analytic tracking.
+It makes the Memerator a better app when we use these third-party products such as Google Analytics.
 
 ## 3. Third-party
 ### 3a. Third-party disclosure
-We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.
+We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information.
 We only use third party software for publishing, designing, coding, and tracking.
 ### 3b. Third-party links
 We will not offer third-party products or services on our website.
