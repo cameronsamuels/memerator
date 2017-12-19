@@ -30,23 +30,4 @@ We use Google Analytics to track page views and behavior on our site.
 We do not sell, publish, or distribute this information to anyone.
 We use this information to make our website better and to see which features are used the most.
 
-# Contacting us
-If there are any questions regarding this privacy policy, you may contact us using the information below.
-<pre>
-Xeleration
-Houston, TX 77494
-United States
-hello@xel.company
-+1 (409) 422-5425
-
-Cameron Samuels
-Katy, TX 77494
-United States
-biz@cameronsamuels.com
-
-Toby Latino
-Prairieville, LA 70769
-United States
-toby@xel.company
-</pre>
-Last edited on Monday, November 7, 2017.
+Last edited on Tuesday, December 19, 2017.

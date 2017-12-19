@@ -1,25 +1,24 @@
 # Memerator
-A meme generator for the web 100% free with no ads. Create your own memes using any image. Customize with advanced features.
-# How to
-### Main features
-1. Go to <https://xel.company/memerator> to use
-2. Upload an image (or take a photo too on a mobile device)
-3. Add top and bottom text
-### Advanced features
-4. Change the rotation
-5. Select a custom font
-7. Choose a custom text color
-8. Click the download button (or right click the image and save)
-# Contributing
-You may fork this repo and create a pull request. You will be listed as a contributor.
-<br>Also, if you found a bug or an unexpected behavior, or even have a suggestion, please [open an issue](https://git.io/vdv6V).
-<br>For more information and guidelines on contributing, please review the [guide](https://git.io/vdN49).
-# Team
-[Cameron Samuels](https://cameronsamuels.com) - Project manager, lead developer
-<br>[Toby Latino](https://github.com/pipe-to-grep) - Developer
+A meme generator for the web 100% free with no ads.
+Create your own memes using any image.
+Customize with advanced features such as customizing the rotation, font, and text color.
+
+## Links
+[Web](https://xel.company/memerator) - The main website
+
+## Contributing
+You may fork this repo and create a pull request, and you will be listed as a contributor.
+If you found a bug or have a suggestion, please [open an issue](https://git.io/vdv6V).
+For more information on contributing, review the [contributing guide](https://git.io/vdN49).
+
+### Team
+[Toby Latino](https://git.io/vbl4G) - Project manager, developer
+<br>[Cameron Samuels](https://cameronsamuels.com) - Developer
+
 ### Contributors
-[Robbin K](https://github.com/robbink) - [Leo Gallis](https://github.com/acilliron) - [Nova281](https://github.com/nova281)
-# License
+[Nova281](https://git.io/vbl4l) -
+[Robbin K](https://git.io/vbl4n) -
+[Leo Gallis](https://git.io/vbl4C)
+
+## Legal
 This app is distributed under the [Cameron Samuels License](LICENSE).
-# Attribution
-Memerator uses [JQuery](https://jquery.com), [MaterializeCSS](http://materializecss.com), and [JSColor](http://jscolor.com). Impac is the default font for the meme text.
