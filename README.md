@@ -4,7 +4,7 @@ Create your own memes using any image.
 Customize with advanced features such as customizing the rotation, font, and text color.
 
 ## Links
-[Web](https://xel.company/memerator) - The main website
+[Web](https://zink-tech.github.io/memerator) - The main website
 
 ## Contributing
 You may fork this repo and create a pull request, and you will be listed as a contributor.
