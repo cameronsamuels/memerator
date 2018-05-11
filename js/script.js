@@ -51,7 +51,7 @@ function update() {
     cx.fillText($('input')[1].value, cv.width / 2, cv.height / 7),
     cx.fillText($('input')[2].value, cv.width / 2, cv.height - (cv.height / 17));
     cx.textAlign = "start", cx.fillStyle = "#fff", cx.font = (cv.height / 32) + "px arial ", cx.lineWidth = cv.height / 256;
-    if (mrk) cx.strokeText('memerator.tk', 5, cv.height - (cv.height / 67)), cx.fillText('memerator.tk', 5, cv.height - (cv.height / 67));
+    if (mrk) cx.strokeText('cameronsamuels.com/memerator', 5, cv.height - (cv.height / 67)), cx.fillText('cameronsamuels.com/memerator', 5, cv.height - (cv.height / 67));
     d('a').href = cv.toDataURL();
     cv.style.background = "url(" + cv.toDataURL() + ") no-repeat 100%/cover";
     $(".dropdown-content a").html(function(i, t) { return t.replace('<i class="material-icons">done</i>', "") });
